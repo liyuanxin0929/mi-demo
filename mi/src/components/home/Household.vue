@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data(){
         return {
@@ -32,27 +33,27 @@ export default {
             listEle:null,
             scrollTop:0,
             list:[
-                {
-                    img:require("../../assets/household/02.jpg"),
-                    title:"十字门冰箱 4开门",
-                    des:"风冷无霜，长久保鲜",
-                    price:"￥2999",
-                    i:"￥3299"
-                },
-                {
-                    img:require("../../assets/household/03.jpg"),
-                    title:"风冷三门冰箱",
-                    des:"三门保鲜，无霜养鲜",
-                    price:"￥1588",
-                    i:"￥1699"
-                },
-                {
-                    img:require("../../assets/household/04.jpg"),
-                    title:"两门冰箱 160L",
-                    des:"小巧能装，速冻养鲜",
-                    price:"￥929",
-                    i:"￥1099"
-                }
+            //     {
+            //         img:require("../../assets/household/02.jpg"),
+            //         title:"十字门冰箱 4开门",
+            //         des:"风冷无霜，长久保鲜",
+            //         price:"￥2999",
+            //         i:"￥3299"
+            //     },
+            //     {
+            //         img:require("../../assets/household/03.jpg"),
+            //         title:"风冷三门冰箱",
+            //         des:"三门保鲜，无霜养鲜",
+            //         price:"￥1588",
+            //         i:"￥1699"
+            //     },
+            //     {
+            //         img:require("../../assets/household/04.jpg"),
+            //         title:"两门冰箱 160L",
+            //         des:"小巧能装，速冻养鲜",
+            //         price:"￥929",
+            //         i:"￥1099"
+            //     }
             ]
         }
     },
@@ -60,6 +61,23 @@ export default {
     mounted() {
         this.listEle = this.$refs.contactList;
     },
+    created() {
+    let url = `http://127.0.0.1:5500/dist/data1/HouseholdList.json`;
+    let that = this;
+    console.log("chengg");
+    axios
+      .get(url)
+      .then(function (response) {
+        if (response.data.code == 200) {
+          console.log(response);
+          that.list = response.data.list;
+          console.log(that.list);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
     methods: {
         divScroll() {
             this.scrollTop = event.target.scrollTop;

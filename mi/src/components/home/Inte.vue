@@ -1,6 +1,7 @@
 <template>
     <!-- 电视 -->
-    <div class="inte-box" ref="contactList" @scroll="divScroll" id="back">
+    <div class="inte-box" ref="contactList" @scroll="divScroll" id="back" >
+        <!-- <div v-for="item in list" :key="item.item"> -->
         <!-- 回到顶部 -->
             <div class="back-top-wrap"  v-if="seen" @click="backTop">
                 <img src="../../assets/回到顶部.png" class="backTop" />
@@ -11,7 +12,7 @@
         
         <!-- 商品 -->
         <div class="inte-content">
-            <div class="inte-content-wrap" v-for="item in list" :key="item.item">
+            <div class="inte-content-wrap" v-for="item in list[0]" :key="item.item">
                 <img :src="item.img" class="inte-wrap-img">
                 <p class="inte-wrap-title">{{item.title}}</p>
                 <p class="inte-wrap-des">{{item.des}}</p>
@@ -28,7 +29,7 @@
             <img src="../../assets/inte/06.jpg" class="inte-box-img">
         </div>
         <div class="inte-content content1">
-            <div class="inte-content-wrap" v-for="item in wrap" :key="item.item">
+            <div class="inte-content-wrap" v-for="item in list[1]" :key="item.item">
                 <img :src="item.img" class="inte-wrap-img">
                 <p class="inte-wrap-title">{{item.title}}</p>
                 <p class="inte-wrap-des">{{item.des}}</p>
@@ -62,10 +63,12 @@
                 </div>
             </div>    
         </div>
+          <!-- </div> -->
     </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data(){
         return {
@@ -73,56 +76,56 @@ export default {
             listEle:null,
             scrollTop:0,
             list:[
-                {
-                    img:require("../../assets/inte/02.jpg"),
-                    title:"小米电视4A 32英寸",
-                    des:"人工智能系统，高清液晶屏，64",
-                    price:"￥599",
-                    i:"￥799",
-                    btn:"立即购买"
-                },
-                {
-                    img:require("../../assets/inte/03.jpg") ,
-                    title:"全面屏电视 55英寸",
-                    des:"潮流全面屏设计，4K超清画质",
-                    price:"￥1599",
-                    i:"￥1999",
-                    btn:"立即购买"
-                },
-                {
-                    img:require("../../assets/inte/04.jpg"),
-                    title:"全面屏电视 65英寸",
-                    des:"震撼大屏，时尚全面屏",
-                    price:"￥2499",
-                    i:"￥3099",
-                    btn:"立即购买"
-                },
-                {
-                    img:require("../../assets/inte/05.jpg"),
-                    title:"小米电视4C 43英寸",
-                    des:"FHD全高清屏，钢琴烤漆",
-                    price:"￥999",
-                    i:"￥1399",
-                    btn:"立即购买"
-                }
-            ],
-            wrap:[
-                {
-                    img:require("../../assets/inte/07.jpg"),
-                    title:"Redmi 智能电视 X55",
-                    des:"超高清广色域，还原真实影像",
-                    price:"￥2166",
-                    i:"￥2299",
-                    btn:"立即购买"
-                },
-                {
-                    img:require("../../assets/inte/08.jpg") ,
-                    title:"Redmi 智能电视 X65",
-                    des:"4K超清画质，细腻如真",
-                    price:"￥2966",
-                    i:"￥3299",
-                    btn:"立即购买"
-                }
+            //     {
+            //         img:require("../../assets/inte/02.jpg"),
+            //         title:"小米电视4A 32英寸",
+            //         des:"人工智能系统，高清液晶屏，64",
+            //         price:"￥599",
+            //         i:"￥799",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img:require("../../assets/inte/03.jpg") ,
+            //         title:"全面屏电视 55英寸",
+            //         des:"潮流全面屏设计，4K超清画质",
+            //         price:"￥1599",
+            //         i:"￥1999",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img:require("../../assets/inte/04.jpg"),
+            //         title:"全面屏电视 65英寸",
+            //         des:"震撼大屏，时尚全面屏",
+            //         price:"￥2499",
+            //         i:"￥3099",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img:require("../../assets/inte/05.jpg"),
+            //         title:"小米电视4C 43英寸",
+            //         des:"FHD全高清屏，钢琴烤漆",
+            //         price:"￥999",
+            //         i:"￥1399",
+            //         btn:"立即购买"
+            //     }
+            // ],
+            // wrap:[
+            //     {
+            //         img:require("../../assets/inte/07.jpg"),
+            //         title:"Redmi 智能电视 X55",
+            //         des:"超高清广色域，还原真实影像",
+            //         price:"￥2166",
+            //         i:"￥2299",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img:require("../../assets/inte/08.jpg") ,
+            //         title:"Redmi 智能电视 X65",
+            //         des:"4K超清画质，细腻如真",
+            //         price:"￥2966",
+            //         i:"￥3299",
+            //         btn:"立即购买"
+            //     }
             ]
         }
     },
@@ -130,6 +133,23 @@ export default {
     mounted() {
         this.listEle = this.$refs.contactList;
     },
+     created() {
+    let url = `http://127.0.0.1:5500/dist/data1/InteList.json`;
+    let that = this;
+    console.log("chengg");
+    axios
+      .get(url)
+      .then(function (response) {
+        if (response.data.code == 200) {
+          console.log(response);
+          that.list = response.data.list;
+          console.log(that.list);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
     methods: {
         divScroll() {
             this.scrollTop = event.target.scrollTop;
