@@ -1,0 +1,241 @@
+<template>
+    <!-- 生活周边 -->
+    <div class="living-box" ref="contactList" @scroll="divScroll" id="back">
+        <!-- 回到顶部 -->
+            <div class="back-top-wrap"  v-if="seen" @click="backTop">
+                <img src="../../assets/回到顶部.png" class="backTop" />
+            </div>
+        <div>
+            <img src="../../assets/living/01.jpg" class="living-box-img">
+        </div>
+
+        <div class="living-wrap">
+            <div class="living-item" v-for="item in list" :key="item.item">
+                <img :src="item.img"  class="living-item-img">
+            </div>
+        </div>
+
+        <div>
+            <img src="../../assets/living/08.jpg" class="living-box-img">
+        </div>
+
+        <div class="living-list">
+            <div class="living-list-item" v-for="item in wrap" :key="item.item">
+                <img :src="item.img" class="living-list-img">
+                <p class="living-list-title">{{item.title}}</p>
+                <p class="living-list-des">{{item.des}}</p>
+                <p class="living-list-price">
+                    {{item.price}}
+                   <span class="living-list-i">{{item.i}}</span> 
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return {
+            seen:false,
+            listEle:null,
+            scrollTop:0,
+            list:[
+                {
+                    img:require("../../assets/living/02.jpg")
+                },
+                {
+                    img:require("../../assets/living/03.jpg")
+                },
+                {
+                    img:require("../../assets/living/04.jpg")
+                },
+                {
+                    img:require("../../assets/living/05.jpg")
+                },
+                {
+                    img:require("../../assets/living/06.jpg")
+                },
+                {
+                    img:require("../../assets/living/07.jpg")
+                }
+            ],
+            wrap:[
+                {
+                    img:require("../../assets/living/10.jpg"),
+                    title:"驱蚊器基础版",
+                    des:"3个装，长效驱蚊",
+                    price:"￥99",
+                    i:"￥129"
+                },
+                {
+                    img:require("../../assets/living/11.jpg"),
+                    title:"支架式自拍杆",
+                    des:"解放双手，定格更美",
+                    price:"￥69",
+                    i:"￥89"
+                },
+                {
+                    img:require("../../assets/living/12.jpg"),
+                    title:"小米小背包",
+                    des:"城市休闲，简单",
+                    price:"￥24.9起",
+                },
+                {
+                    img:require("../../assets/living/11.jpg"),
+                    title:"支架式自拍杆",
+                    des:"解放双手，定格更美",
+                    price:"￥69",
+                    i:"￥89"
+                },
+                {
+                    img:require("../../assets/living/12.jpg"),
+                    title:"小米小背包",
+                    des:"城市休闲，简单",
+                    price:"￥24.9起",
+                },
+                {
+                    img:require("../../assets/living/10.jpg"),
+                    title:"驱蚊器基础版",
+                    des:"3个装，长效驱蚊",
+                    price:"￥99",
+                    i:"￥129"
+                },
+                {
+                    img:require("../../assets/living/11.jpg"),
+                    title:"支架式自拍杆",
+                    des:"解放双手，定格更美",
+                    price:"￥69",
+                    i:"￥89"
+                },
+                {
+                    img:require("../../assets/living/10.jpg"),
+                    title:"驱蚊器基础版",
+                    des:"3个装，长效驱蚊",
+                    price:"￥99",
+                    i:"￥129"
+                },
+                {
+                    img:require("../../assets/living/12.jpg"),
+                    title:"小米小背包",
+                    des:"城市休闲，简单",
+                    price:"￥24.9起",
+                },
+            ]
+        }
+    },
+    // 回到顶部
+    mounted() {
+        this.listEle = this.$refs.contactList;
+    },
+    methods: {
+        divScroll() {
+            this.scrollTop = event.target.scrollTop;
+            console.log(this.scrollTop);
+            if(this.scrollTop>200){
+                this.seen = true
+            }else{
+                this.seen = false
+            }
+        },
+        backTop() {
+            let back = document.querySelector("#back");
+            back.scrollTop = 0
+        }
+    },
+}
+</script>
+
+<style scoped>
+.living-box{
+    flex-grow: 1;
+    overflow: auto;
+    background-color: rgb(91, 176, 163);
+}
+
+.living-box-img{
+    width: 100%;
+    height: 100%;
+}
+
+.living-item-img{
+    width: 100%;
+}
+
+.living-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.living-item{
+    width: 50%;
+}
+
+.living-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 3px;
+}
+
+.living-list-item{
+    width: 32%;
+    background: #fff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.living-list-img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.living-list-title{
+    font-size: 12px;
+    color: #3C3C3C;
+    font-weight: bolder;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.living-list-des{
+    font-size: 12px;
+    color: #3C3C3C;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.living-list-price{
+    font-size: 12px;
+    color: rgb(245, 75, 75);
+    font-weight: bolder;
+    text-align: center;
+}
+
+.living-list-i{
+    font-size: 12px;
+    color: rgba(0,0,0,.54);
+    text-decoration: line-through;
+}
+
+/* 回到顶部 */
+.back-top-wrap {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 10%;
+}
+
+.backTop {
+  width: 100%;
+}
+</style>
