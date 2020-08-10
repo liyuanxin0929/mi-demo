@@ -2,7 +2,7 @@
     <div class="box">
         <!-- 首页顶部 -->
         <div class="box-top top1">
-            <div class="top-left">
+            <div class="top-left" @click="backBtn">
                 <img src="../assets/箭头 left.png" alt />
             </div>
             <div class="top-content1">分类</div>
@@ -1816,6 +1816,11 @@ export default {
                 path: "/search",
             });
         },
+        backBtn() {
+            this.$router.push({
+                path:"/"
+            })
+        }
     },
 
 }
