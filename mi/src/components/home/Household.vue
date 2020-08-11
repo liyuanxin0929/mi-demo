@@ -29,16 +29,11 @@ import axios from "axios";
 export default {
     data(){
         return {
-            meta:{
-                index:5
-            },
-            
             seen:false,
             listEle:null,
             scrollTop:0,
             list:[]
         }
-        // console.log(this.$route.meta)
     },
     // 回到顶部
     mounted() {

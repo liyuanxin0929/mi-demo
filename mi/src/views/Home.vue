@@ -59,13 +59,11 @@
         <div class="mask" v-if="mask"></div>
 
         <!-- 组件 -->
-        <div style="height:100%">
-
-        
+        <!-- <div style="height:100%"> -->
             <transition :name="rightLeft"> 
                 <component :is="componentNames"></component>
             </transition> 
-        </div>
+        <!-- </div> -->
         <!-- 底部 -->
         <div class="box-bottom">
             <div class="bottom-btn">
@@ -82,9 +80,10 @@
                 <a href="https://m.mi.com/discover">星球</a>
                 </div>
             </div>
-            <div class="bottom-btn" @click="cartBtn">
+            <div class="bottom-btn bottom-count" @click="cartBtn">
                 <img src="../assets/购物车1.png" class="bottom-img" alt />
                 <div class="bottom-title">购物车</div>
+                <div class="countbox" v-if="count>0">{{count}}</div>
             </div>
             <div class="bottom-btn" @click="myBtn">
                 <img src="../assets/我的1.png" class="bottom-img" alt />
@@ -120,6 +119,20 @@ export default {
         "notebook-list": Notebook,
         "household-list": Household,
         "living-list": Living,
+    },
+    computed:{
+        wrap () {
+        return this.$store.state.wrap
+        },
+        count(){
+        let numm=0;
+        for(let i=0;i<this.wrap.length;i++){
+            if(this.wrap[i].checked==true){
+                 numm+=this.wrap[i].num
+            }
+        }
+        return numm
+        },
     },
     methods: {
         // 组件切换
@@ -226,11 +239,28 @@ a{
 }
 
 /* 底部 */
+.bottom-count{
+    position: relative;
+}
+.countbox{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    font-size:5px;
+    color: #fff;
+    background-color:#ed4d41;
+    border-radius: 50%;
+    top: 6px;
+    right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .box-bottom {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 10px;
+    z-index: 10px; */
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
@@ -362,7 +392,7 @@ a{
 }
 
 /* 过渡效果 */
-.left-enter{
+/* .left-enter{
     transform: translateX(-5px);
 }
 .left-enter-active,
@@ -382,5 +412,5 @@ a{
 }
 .right-leave-to{
     transform: translateX(-5px);
-}
+} */
 </style>

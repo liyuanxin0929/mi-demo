@@ -54,16 +54,16 @@
     </div>
 
     <div class="recommend-phone-wrap">
-      <div v-for="item in list[1]" :key="item.item" class="recommend-phone" @click="desBtn">
-        <img :src="item.img" alt class="recommend-phone-img" />
+      <div v-for="item in list[1]" :key="item.item" class="recommend-phone">
+        <img :src="item.img" alt class="recommend-phone-img"  @click="desBtn(item.id)"/>
         <div class="recommend-phone-content">
           <p class="recommend-phone-title">{{item.title}}</p>
           <p class="recommend-phone-des">{{item.des}}</p>
           <p class="recommend-phone-price">
-            {{item.price}}
+            ￥{{item.price}}
             <span class="recommend-phone-i">{{item.i}}</span>
           </p>
-          <p class="recommend-phone-btn">{{item.btn}}</p>
+          <p class="recommend-phone-btn" @click="addclick(item)">{{item.btn}}</p>
         </div>
       </div>
     </div>
@@ -77,15 +77,15 @@
 
     <div class="recommend-television-wrap">
       <div v-for="item in list[2]" :key="item.item" class="recommend-phone">
-        <img :src="item.img" alt class="recommend-phone-img" />
+        <img :src="item.img" alt class="recommend-phone-img"  @click="btntv(item.id)"/>
         <div class="recommend-television-content">
           <p class="recommend-television-title">{{item.title}}</p>
           <p class="recommend-phone-des">{{item.des}}</p>
           <p class="recommend-phone-price">
-            {{item.price}}
+            ￥{{item.price}}
             <span class="recommend-phone-i">{{item.i}}</span>
           </p>
-          <p class="recommend-phone-btn">{{item.btn}}</p>
+          <p class="recommend-phone-btn" @click="addclick(item)">{{item.btn}}</p>
         </div>
       </div>
     </div>
@@ -107,7 +107,7 @@
           <p class="recommend-notebook-title">{{item.title}}</p>
           <p class="recommend-phone-des">{{item.des}}</p>
           <p class="recommend-phone-price">
-            {{item.price}}
+            ￥{{item.price}}
             <span class="recommend-phone-i">{{item.i}}</span>
           </p>
           <p class="recommend-phone-btn">{{item.btn}}</p>
@@ -132,7 +132,7 @@
           <p class="recommend-household-title">{{item.title}}</p>
           <p class="recommend-household-des">{{item.des}}</p>
           <p class="recommend-household-price">
-            {{item.price}}
+            ￥{{item.price}}
             <span class="recommend-household-i">{{item.i}}</span>
           </p>
         </div>
@@ -156,7 +156,7 @@
           <p class="recommend-household-title">{{item.title}}</p>
           <p class="recommend-household-des">{{item.des}}</p>
           <p class="recommend-household-price">
-            {{item.price}}
+            ￥{{item.price}}
             <span class="recommend-household-i">{{item.i}}</span>
           </p>
         </div>
@@ -228,6 +228,10 @@ export default {
   },
 
   methods: {
+    //添加购物车
+    addclick(item){
+      this.$store.commit("adddetail",item)
+    },
     // 回到顶部
     divScroll() {
       this.scrollTop = event.target.scrollTop;
@@ -242,13 +246,24 @@ export default {
       let back = document.querySelector("#back");
       back.scrollTop = 0;
     },
-    desBtn(){
+    desBtn(id){
       this.$router.push({
-        path:"/phoneList"
+        path:"/details",
+        query:{
+          id:id,
+        }
       })
-    }
+    },
+    btntv(id){
+      this.$router.push({
+        path:"/details",
+        query:{
+          id:id,
+        }
+      })
   },
-};
+  }
+}
 </script>
 
 <style scoped>

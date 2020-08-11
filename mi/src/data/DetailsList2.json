@@ -1,0 +1,124 @@
+{
+    "code": 200,
+    "status": "成功",
+    "list": [
+      [
+        {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun01.jpeg"
+        },
+        {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun02.jpg"
+        },
+         {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun03.jpg"
+        },
+         {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun04.jpg"
+        },
+         {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun05.jpg"
+        },
+         {
+          "img":"http://localhost:5500/dist/assets/phoneList/lun06.jpg"
+        }
+      ],
+     [
+        {"price":4999}
+      ],
+      [
+        {"title":"小米10 pro"}
+      ],
+      [
+        {
+          "one":"http://localhost:5500/dist/assets/数字1.png",
+          "two":"http://localhost:5500/dist/assets/数字2.png",
+          "three":"http://localhost:5500/dist/assets/数字3.png",
+          "title1":"智能操控",
+          "title2":"一键循环定时",
+          "title3":"长效驱蚊",
+          "title4":"全场最高立省200元，小米小背包全系列满一件包邮！>",
+          "title5":"米家驱蚊器智能版 白色x1",
+          "img":"http://localhost:5500/dist/assets/recommend/09.jpg",
+          "title6":"米家驱蚊器智能版",
+          "title7":"驱蚊片 白色",
+          "title8":"米家超级电池4粒装 5号",
+          "price":4999,
+          "title":"小米10 pro"
+        }
+      ],
+      [
+        {
+          "img":"http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang001.jpg",
+          "name": "米小米",
+          "price": "2"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang002.jpg",
+          "name": "大虾",
+          "price": "1"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang003.jpg",
+          "name": "侠路红尘",
+          "price": "4"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang004.jpg",
+          "name": "醉卧乾坤",
+          "price": "5"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang001.jpg",
+          "name": "萝卜干干",
+          "price": "6"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/recommend/09.jpg",
+          "text": "小米手机",
+          "tou": "http://localhost:5500/dist/assets/xiang002.jpg",
+          "name": "那一抹潇洒",
+          "price": "7"
+        }
+      ],
+      [
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d1.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d2.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d3.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d4.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d5.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d6.jpg"
+        },
+        {
+          "img": "http://localhost:5500/dist/assets/phoneList/d7.jpg"
+        }
+      ],
+      
+        {
+          "price":"4999",
+          "title":"小米手机",
+          "img":"http://localhost:5500/dist/assets/recommend/09.jpg"
+        }
+      
+    ]
+  }
