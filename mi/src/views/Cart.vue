@@ -2,7 +2,7 @@
     <div class="box">
         <!-- 首页顶部 -->
         <div class="box-top top1">
-            <div class="top-left">
+            <div class="top-left" @click="backBtn">
                 <img src="../assets/箭头 left.png" alt />
             </div>
             <div class="top-content1">购物车</div>
@@ -72,15 +72,16 @@
                     </div>                    
                 </div>
                 <div class="tips-box">
-                    <p>温馨提示：产品是否购买成功，以最终下单为准，请尽快结算</p>
+                    温馨提示：产品是否购买成功，以最终下单为准，请尽快结算
                 </div>                
             </div>
 
-             <div class="shopping-center-img">
-                <img src="../assets/cai.jpg">
-            </div>
+
             <!-- 商品列表 -->
             <div class="item-list-box">
+                <div class="shopping-center-img">
+                    <img src="../assets/cai.jpg">
+                </div>
                 <div v-for="item in list" :key="item.price" class="item-listbox" @click="detailsclick">
                     <img :src="item.src" alt="">
                     <p class="shoppingp">{{item.text}}</p>
@@ -270,6 +271,7 @@ export default {
                 path:'/my'
             })
         },
+
         // 搜索按钮
         searchBtn() {
             this.$router.push({
@@ -282,8 +284,12 @@ export default {
         },
         checkBtn2(index){
             this.wrap[index].checked=true
-            // this.count+=this.wrap[index].num
         },
+        backBtn(){
+            this.$router.push({
+                path:"/"
+            })
+        }
     }
 }
 </script>
@@ -630,5 +636,176 @@ a{
     font-weight: normal;
     color: #999999;
     font-size: 12px;
+}
+
+/* 去结算 */
+.cart-bottom-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cart-bottom-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cart-bottom-left{
+    background: #fff;
+    padding: 0 20px;
+}
+.cart-item-box{
+    background: #F4F4F4;
+    color: #333;
+    font-size: 12px;
+    padding: 10px 30px;
+}
+.cart-btn-box{
+    background: #ff6700;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 30px;
+}
+.cart-bottom-left-item1{
+    letter-spacing: 1.5px;
+    color: #999999;
+    font-size: 12px;
+}
+.cart-bottom-left-item2{
+    font-weight: bolder;
+    color: #FF5722;
+    font-size: 17px;
+    padding: 0 20px;
+}
+.cart-bottom-left-item3{
+    font-weight: normal;
+    color: #999999;
+    font-size: 12px;
+}
+
+/* 购物车 */
+.cart-item-left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 5px;
+}
+.cart-item-left-img{
+    width: 20px;
+    height: 20px;
+}
+
+.cart-img-box{
+    width: 100%;
+    /* height: 80%; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+.cart-img{
+    width: 100%;
+}
+
+.cart-title{
+    color: #666666;
+    font-size: 12px;
+    margin: 3px;
+    width: 70%;
+}
+.cart-price{
+    color: #999999;
+    font-size: 12px;
+    margin: 3px;
+}
+
+.cart-input-left{
+    width: 30%;
+    padding: 3px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background: #f6f6f6;
+}
+.cart-input-left-img{
+    width: 100%;
+}
+.cart-input-right{
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background: #f6f6f6;
+}
+.cart-input-right-img{
+    width: 100%;
+}
+
+.cart-input-content{
+    width: 30%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.cart-del-box{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-del-img{
+    width: 100%;
+}
+
+.cart-box{
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+}
+.cart-item-wrap{
+    /* border: 1px solid red; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+}
+
+.cart-item-content{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    /* margin: 10px;
+    padding: 5px; */
+}
+
+.cart-item-right{
+    padding: 10px 3px;
+}
+
+.cart-item-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart-input-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 30%;
+    margin: 3px;
+    border: 1px solid #e0e0e0;
+}
+
+.tips-box{
+    background: #fff;
+    color: #999999;
+    font-size: 12px;
+    padding: 10px;
 }
 </style>

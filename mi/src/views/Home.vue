@@ -9,7 +9,7 @@
                 <img src="../assets/搜索.png" alt class="content-search" />
                 <input type="text" readonly="readonly" placeholder="搜索商品名称" class="content-input" />
             </div>
-            <div class="top-right">
+            <div class="top-right" @click="signBtn">
                 <img src="../assets/登录.png" alt />
             </div>
         </div>
@@ -59,12 +59,9 @@
         <div class="mask" v-if="mask"></div>
 
         <!-- 组件 -->
-       
-            <!-- <div class="compontent-box"> -->
-                <transition> 
-                    <component :is="componentNames"></component>
-                </transition>
-            <!-- </div> -->
+            <!-- <transition>  -->
+                <component :is="componentNames"></component>
+            <!-- </transition> -->
             
         
         
@@ -159,6 +156,11 @@ export default {
                 path: "/search",
             });
         },
+        signBtn(){
+            this.$router.push({
+                path:"/my"
+            })
+        }
     }
 }
 </script>
@@ -346,7 +348,7 @@ a{
 }
 
 /* 过渡效果 */
-.v-enter{
+/* .v-enter{
     opacity: 0;
 }
 .v-enter-to{
@@ -355,5 +357,5 @@ a{
 .v-enter-active,
 .v-leave-active{
     transition: all 0.5s;
-}
+} */
 </style>

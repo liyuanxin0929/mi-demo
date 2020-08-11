@@ -6,27 +6,27 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         wrap:[
-            {
-                img:require("../assets/cart/01.jpg"),
-                title:"米家驱蚊智能版 白色",
-                price:"59元",
-                num:1,
-                checked:true
-            },
-            {
-                img:require("../assets/cart/02.jpg"),
-                title:"小米10 Pro 全网通版 8GB+256GB 星空蓝",
-                price:"4999元",
-                num:1,
-                checked:true
-            },
-            {
-                img:require("../assets/cart/08.jpg"),
-                title:"小米10 Pro 全网通版 8GB+256GB 星空蓝",
-                price:"9999元",
-                num:1,
-                checked:true
-            }
+            // {
+            //     img:require("../assets/cart/01.jpg"),
+            //     title:"米家驱蚊智能版 白色",
+            //     price:"59元",
+            //     num:1,
+            //     checked:true
+            // },
+            // {
+            //     img:require("../assets/cart/02.jpg"),
+            //     title:"小米10 Pro 全网通版 8GB+256GB 星空蓝",
+            //     price:"4999元",
+            //     num:1,
+            //     checked:true
+            // },
+            // {
+            //     img:require("../assets/cart/08.jpg"),
+            //     title:"小米10 Pro 全网通版 8GB+256GB 星空蓝",
+            //     price:"9999元",
+            //     num:1,
+            //     checked:true
+            // }
         ],
         isseen:false
     },

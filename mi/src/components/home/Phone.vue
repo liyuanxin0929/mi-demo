@@ -23,7 +23,7 @@
 
         <!-- 列表 -->
         <div class="phone-content">
-            <div class="phone-item" v-for="item in list" :key="item.item">
+            <div class="phone-item" v-for="item in list[0]" :key="item.item">
                 <img :src="item.img" class="phone-item-img">
                 <div>
                     <div class="phone-bottom-top">
@@ -45,7 +45,7 @@
 
         <!-- 商品 -->
         <div class="phone-bottom">
-            <div class="phone-item-wrap" v-for="item in wrap" :key="item.item">
+            <div class="phone-item-wrap" v-for="item in list[1]" :key="item.item">
                 <img :src="item.img" alt class="phone-bottom-img" />
                 <div class="phone-bottom-content">
                     <p class="phone-item-title title1">{{item.title}}</p>
@@ -64,6 +64,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data (){
         return {
@@ -71,69 +72,69 @@ export default {
             listEle:null,
             scrollTop:0,
             list:[
-                {
-                    img: require("../../assets/phone/04.jpg"),
-                    title:"小米10",
-                    des:"骁龙865处理器/1亿像素8K电影相机",
-                    price:"￥3799起",
-                    i:"￥3999",
-                    btn:"立即购买"
-                },
-                {
-                    img: require("../../assets/phone/05.jpg"),
-                    title:"小米10 Pro",
-                    des:"骁龙865处理器/50倍数字变焦",
-                    price:"￥4999起",
-                    btn:"立即购买"
-                },
-                {
-                    img: require("../../assets/phone/06.jpg"),
-                    title:"Redmi K30 Pro",
-                    des:"双模5G，骁龙865，弹出全面屏，640G",
-                    price:"￥2499起",
-                    i:"￥2699",
-                    btn:"立即购买"
-                },
-                {
-                    img: require("../../assets/phone/07.jpg"),
-                    title:"Redmi K30 5G",
-                    des:"双模5G，120HZ流速屏，索尼6400",
-                    price:"￥1699起",
-                    i:"￥1999",
-                    btn:"立即购买"
-                }
-            ],
-            wrap:[
-                {
-                    img: require("../../assets/phone/s01.jpg"),
-                    title: "Redmi 8A",
-                    des: "5000mAh超长续航",
-                    price: "￥599起",
-                    i: "￥699",
-                    btn: "立即购买",
-                },
-                {
-                    img: require("../../assets/phone/s02.jpg"),
-                    title: "Redmi 8",
-                    des: "5000mAh超长续航",
-                    price: "￥799起",
-                    btn: "立即购买",
-                },
-                {
-                    img: require("../../assets/phone/s03.jpg"),
-                    title: "Redmi Note 8",
-                    des: "千元4800万四摄",
-                    price: "￥899起",
-                    i: "￥999",
-                    btn: "立即购买",
-                },
-                {
-                    img: require("../../assets/phone/s04.jpg"),
-                    title: "Redmi K30 Pro 变焦版",
-                    des: "双模5G，骁龙865，超长续航",
-                    price: "￥3399起",
-                    btn: "立即购买",
-                }
+            //     {
+            //         img: require("../../assets/phone/04.jpg"),
+            //         title:"小米10",
+            //         des:"骁龙865处理器/1亿像素8K电影相机",
+            //         price:"￥3799起",
+            //         i:"￥3999",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img: require("../../assets/phone/05.jpg"),
+            //         title:"小米10 Pro",
+            //         des:"骁龙865处理器/50倍数字变焦",
+            //         price:"￥4999起",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img: require("../../assets/phone/06.jpg"),
+            //         title:"Redmi K30 Pro",
+            //         des:"双模5G，骁龙865，弹出全面屏，640G",
+            //         price:"￥2499起",
+            //         i:"￥2699",
+            //         btn:"立即购买"
+            //     },
+            //     {
+            //         img: require("../../assets/phone/07.jpg"),
+            //         title:"Redmi K30 5G",
+            //         des:"双模5G，120HZ流速屏，索尼6400",
+            //         price:"￥1699起",
+            //         i:"￥1999",
+            //         btn:"立即购买"
+            //     }
+            // ],
+            // wrap:[
+            //     {
+            //         img: require("../../assets/phone/s01.jpg"),
+            //         title: "Redmi 8A",
+            //         des: "5000mAh超长续航",
+            //         price: "￥599起",
+            //         i: "￥699",
+            //         btn: "立即购买",
+            //     },
+            //     {
+            //         img: require("../../assets/phone/s02.jpg"),
+            //         title: "Redmi 8",
+            //         des: "5000mAh超长续航",
+            //         price: "￥799起",
+            //         btn: "立即购买",
+            //     },
+            //     {
+            //         img: require("../../assets/phone/s03.jpg"),
+            //         title: "Redmi Note 8",
+            //         des: "千元4800万四摄",
+            //         price: "￥899起",
+            //         i: "￥999",
+            //         btn: "立即购买",
+            //     },
+            //     {
+            //         img: require("../../assets/phone/s04.jpg"),
+            //         title: "Redmi K30 Pro 变焦版",
+            //         des: "双模5G，骁龙865，超长续航",
+            //         price: "￥3399起",
+            //         btn: "立即购买",
+            //     }
             ],
             swiperOptions: {
                 pagination: {
@@ -157,6 +158,23 @@ export default {
     mounted() {
         this.listEle = this.$refs.contactList;
     },
+    created() {
+        let url = `http://127.0.0.1:5500/dist/data/PhoneList.json`;
+        let that = this;
+        console.log("chengg");
+        axios
+        .get(url)
+        .then(function (response) {
+            if (response.data.code == 200) {
+            console.log(response);
+            that.list = response.data.list;
+            console.log(that.list);
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+  },
     methods: {
         divScroll() {
             this.scrollTop = event.target.scrollTop;
