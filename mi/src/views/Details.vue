@@ -203,13 +203,14 @@
     <!-- 底部 -->
     <div class="detail-bottombox">
       <div class="detail-bottombox-item1">
-        <div class="detail-item1-list">
+        <div class="detail-item1-list" @click="shouclick">
           <img src="../assets/房子1.png" alt />
           <p>首页</p>
         </div>
-        <div class="detail-item1-list">
+        <div class="detail-item1-list bottom-count" @click="gouwuclick">
           <img src="../assets/购物车.png" alt />
           <p>购物车</p>
+          <div class="countbox" v-if="count>0">{{count}}</div>
         </div>
       </div>
       <div class="detail-bottombox-item2" @click="popclick">加入购物车</div>
@@ -310,6 +311,18 @@ export default {
   },
   // 计算总价格
   computed:{
+     wrap () {
+        return this.$store.state.wrap
+    },
+    count(){
+        let numm=0;
+        for(let i=0;i<this.wrap.length;i++){
+            if(this.wrap[i].checked==true){
+                 numm+=this.wrap[i].num
+            }
+        }
+        return numm
+    },
     prices(){
       if(this.seen22==false&&this.seen33==true){
         return this.price1+this.price2
@@ -361,22 +374,7 @@ export default {
       }
       },1)
     },
-    // clickthree(){
-    //   let that=this;
-    //   let timer=setInterval(function(){
-    //     if(that.$refs.scrollbox.scrollTop<1569){
-    //       that.$refs.scrollbox.scrollTop+=20
-    //       if(that.$refs.scrollbox.scrollTop>=1569){
-    //       clearInterval(timer)
-    //     }
-    //     }else{
-    //       that.$refs.scrollbox.scrollTop-=20
-    //       if(that.$refs.scrollbox.scrollTop<=1569){
-    //       clearInterval(timer)
-    //     }              
-    //   }
-    //   },1)
-    // },
+    
     // 追罩层
     popclick(){
       this.isdisplay="block";
@@ -410,6 +408,14 @@ export default {
     },
     // 返回方法
     goclick(){
+      this.$router.go(-1)
+    },
+    shouclick(){
+      this.$router.push({
+        path:"/"
+      })
+    },
+    gouwuclick(){
       this.$router.go(-1)
     },
     // scroll事件
@@ -858,6 +864,24 @@ export default {
   padding: 15px;
   color: #ff6700;
   font-size: 14px;
+}
+/* 购物车 */
+.bottom-count{
+    position: relative;
+}
+.countbox{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    font-size:5px;
+    color: #fff;
+    background-color:#ed4d41;
+    border-radius: 50%;
+    top: -2px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* 商品介绍 */
 .datail-center-item15 img{

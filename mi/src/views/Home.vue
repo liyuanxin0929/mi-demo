@@ -83,9 +83,10 @@
                 <a href="https://m.mi.com/discover">星球</a>
                 </div>
             </div>
-            <div class="bottom-btn" @click="cartBtn">
+            <div class="bottom-btn bottom-count" @click="cartBtn">
                 <img src="../assets/购物车1.png" class="bottom-img" alt />
                 <div class="bottom-title">购物车</div>
+                <div class="countbox" v-if="count>0">{{count}}</div>
             </div>
             <div class="bottom-btn" @click="myBtn">
                 <img src="../assets/我的1.png" class="bottom-img" alt />
@@ -119,6 +120,20 @@ export default {
         "notebook-list": Notebook,
         "household-list": Household,
         "living-list": Living,
+    },
+    computed:{
+        wrap () {
+        return this.$store.state.wrap
+        },
+        count(){
+        let numm=0;
+        for(let i=0;i<this.wrap.length;i++){
+            if(this.wrap[i].checked==true){
+                 numm+=this.wrap[i].num
+            }
+        }
+        return numm
+        },
     },
     methods: {
         // 组件切换
@@ -216,6 +231,23 @@ a{
 }
 
 /* 底部 */
+.bottom-count{
+    position: relative;
+}
+.countbox{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    font-size:5px;
+    color: #fff;
+    background-color:#ed4d41;
+    border-radius: 50%;
+    top: 6px;
+    right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .box-bottom {
     flex-shrink: 0;
     display: flex;

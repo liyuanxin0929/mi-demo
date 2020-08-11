@@ -120,8 +120,7 @@
         <div class="cart-bottom-box" v-else>
             <div class="cart-bottom-left">
                 <span class="cart-bottom-left-item1">
-                    <span>共{{count}}件</span>
-                    <span>金额:</span>
+                    共{{count}}件 金额:
                 </span>
                 <p class="cart-bottom-left-item2">
                     <span>{{prices}}</span>
@@ -598,6 +597,7 @@ a{
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    flex-shrink: 0;
 }
 .cart-bottom-left{
     background: #fff;
@@ -625,6 +625,9 @@ a{
     letter-spacing: 1.5px;
     color: #999999;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cart-bottom-left-item2{
     font-weight: bolder;
