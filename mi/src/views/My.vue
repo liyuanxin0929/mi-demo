@@ -6,11 +6,11 @@
                 <div class="my-topbox-img">
                     <img src="../assets/my/登录.png" />
                 </div>
-                <div class="my-topbox-text" v-if="seen" @click="zhuiclick">登录/注册</div>
-                <div class="my-topbox-text" v-else>
+                <div class="my-topbox-text" v-if="isseen">
                     <div>lvliang</div>
                     <div>石头</div>
                 </div>
+                <div class="my-topbox-text"  v-else  @click="zhuiclick">登录/注册</div>
             </div>
 
             <div class="my-topbox2">
@@ -170,6 +170,11 @@ export default {
             active: "none",
             seen:true
         };
+    },
+    computed:{
+        isseen () {
+        return this.$store.state.isseen
+        }
     },
     methods:{
         zhuiclick() {

@@ -93,6 +93,11 @@ export default {
             seen1: 0,
         };
     },
+    computed:{
+        isseen () {
+        return this.$store.state.isseen
+        }
+    },
     methods:{
         yanclick() {
             this.num++;
@@ -123,7 +128,9 @@ export default {
                 this.seen1=3
                 this.$refs.top2box1.style="border-bottom:0.1px solid #ff6700;";
                 this.$refs.top2box2.style="border-bottom:0.1px solid #ff6700;"
-            }else {
+            }
+            if(this.message.trim()!=""&&this.message.trim()=="lvliang"&&this.passmessage.trim()!=""&&this.passmessage.trim()=="123456") {
+                this.$store.commit("fun");
                 this.$router.go(-1)
             }
         },
@@ -243,7 +250,7 @@ export default {
     padding: 0px 15px;
     font-size: 10px;
     color: #9b9b9b;
-    margin-top: 50px;
+    margin-top: 30px;
     align-items: center;
 }
 .listitem {
@@ -272,7 +279,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    margin-top: 120px;
+    margin-top: 10px;
     font-size: 14px;
 }
 .jianbox {

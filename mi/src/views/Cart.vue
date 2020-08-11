@@ -13,7 +13,7 @@
 
         <!-- 中间 -->
         <div class="box-content">
-            <div class="shopping-top" @click="fun" v-if="seen">
+            <div class="shopping-top" @click="fun" v-if="isseen==false">
                 <div class="shopping-itemtop">
                     <span class="itemtop-span">登陆后享受更多优惠</span>
                 </div>
@@ -22,14 +22,61 @@
                     <img src="../assets/箭头 right.png">
                 </div>
             </div>
-            <div class="shopping-center">
+            <div class="shopping-center" v-if="wrap.length<=0">
                 <div class="centeritem-box">
                     <img src="../assets/gou.png">
                 </div>
                 <div class="centeritem-box1">购物车还是空的</div>
                 <div class="centeritem-box2">去逛逛</div>
             </div>
-            <div class="shopping-center-img">
+
+             <!-- 购物车添加商品 -->
+            <div class="cart-box" v-if="wrap.length>=0">
+                <div class="cart-item-wrap" v-for="(item,index) in wrap" :key="item.item">
+                    
+                    <div class="cart-item-left" v-if="item.checked" @click="checkBtn1(index)">
+                        <img src="../assets/cart/选中.png" class="cart-item-left-img">                       
+                    </div>
+
+                    <div class="cart-item-left" v-else @click="checkBtn2(index)">
+                        <img src="../assets/cart/未选中.png" class="cart-item-left-img">
+                    </div>
+
+                    <div class="cart-item-content">
+                        <div class="cart-img-box">
+                            <img :src="item.img" class="cart-img">
+                        </div>
+                        <div class="cart-item-right">
+                            <p class="cart-title">{{item.title}}</p>
+                            <p class="cart-price">
+                                <span class="cart-des">售价:</span>
+                                {{item.price}}
+                            </p>
+                            <div class="cart-item-bottom">
+                                <div class="cart-input-box">
+                                    <div class="cart-input-left" @click="minusclick(index)" ref="jian">
+                                        <img src="../assets/cart/减.png" class="cart-input-left-img">
+                                    </div>
+                                    <div class="cart-input-content">
+                                        <span class="cart-input-content-item">{{item.num}}</span>
+                                    </div>
+                                    <div class="cart-input-right" @click="addclick(index)">
+                                        <img src="../assets/cart/加.png"  class="cart-input-right-img">
+                                    </div>
+                                </div>
+                                <div class="cart-del-box" @click="delclick(index)">
+                                    <img src="../assets/cart/删 除.png" class="cart-del-img">
+                                </div>
+                            </div>   
+                        </div>     
+                    </div>                    
+                </div>
+                <div class="tips-box">
+                    <p>温馨提示：产品是否购买成功，以最终下单为准，请尽快结算</p>
+                </div>                
+            </div>
+
+             <div class="shopping-center-img">
                 <img src="../assets/cai.jpg">
             </div>
             <!-- 商品列表 -->
@@ -37,14 +84,14 @@
                 <div v-for="item in list" :key="item.price" class="item-listbox" @click="detailsclick">
                     <img :src="item.src" alt="">
                     <p class="shoppingp">{{item.text}}</p>
-                    <p class="item-list-p2">￥{{item.price}}</p>
+                    <p class="item-list-p2">￥<span class="item-list-p3">{{item.price}}</span></p>
                 </div>
             </div>
         </div>
 
 
         <!-- 底部 -->
-        <div class="box-bottom">
+        <div class="box-bottom" v-if="wrap.length<=0">
             <div class="bottom-btn" @click="homeBtn">
                 <img src="../assets/首页1.png" class="bottom-img" alt />
                 <div class="bottom-title">首页</div>
@@ -68,6 +115,27 @@
                 <div class="bottom-title">我的</div>
             </div>
         </div>
+        <!-- 结算 -->
+        <div class="cart-bottom-box" v-else>
+            <div class="cart-bottom-left">
+                <span class="cart-bottom-left-item1">
+                    <span>共{{count}}件</span>
+                    <span>金额:</span>
+                </span>
+                <p class="cart-bottom-left-item2">
+                    <span>{{prices}}</span>
+                    <span class="cart-bottom-left-item3">元</span>
+                </p>
+            </div>
+            <div class="cart-bottom-right">
+                <div class="cart-item-box">
+                    <span>继续购物</span>
+                </div>
+                <div class="cart-btn-box">
+                    <span>去结算</span>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -75,6 +143,11 @@
 export default {
     data(){
         return {
+            seen:true,
+            seen1:true,
+            seen3:false,
+            seen4:true,
+            seen5:true,
             list:[
                 {
                     src:require("../assets/shopping/01.jpg"),
@@ -126,20 +199,59 @@ export default {
                     text:"Redmi 全自动波轮洗衣机",
                     price:"899"
                 }
-            ],
-            seen:true
+            ]
         }
     },
+    computed:{
+        wrap () {
+        return this.$store.state.wrap
+    },
+    isseen () {
+        return this.$store.state.isseen
+    },
+    count(){
+        let numm=0;
+        for(let i=0;i<this.wrap.length;i++){
+            if(this.wrap[i].checked==true){
+                 numm+=this.wrap[i].num
+            }
+        }
+        return numm
+    },
+    prices(){
+        let numm=0;
+        for(let i=0;i<this.wrap.length;i++){
+            if(this.wrap[i].checked==true){
+                 numm+=(parseInt(this.wrap[i].num) *parseInt(this.wrap[i].price))
+            }
+        }
+        return  numm
+    }
+    },
     methods:{
+        // 购物车
+        addclick(index){
+            this.$store.commit("addnum", index);
+        },
+        minusclick(index){
+            this.$store.commit("minusnum", index);
+            if(this.wrap[index].num==0){
+                this.wrap[index].num=1
+            }
+        },
+        delclick(index){
+            this.$store.commit("delitem", index);
+        },
+        // 路由跳转
         fun(){
             this.seen=false;
             this.$router.push({
-                path:"/login"
+                path:"/login"//登录界面
             })
         },
         detailsclick(){
             this.$router.push({
-                path:"/details"
+                path:"/details"//详情页面
             })
         },
         // 页面切换
@@ -164,11 +276,22 @@ export default {
                 path: "/search",
             });
         },
+        //选中切换
+        checkBtn1(index){
+            this.wrap[index].checked=false
+        },
+        checkBtn2(index){
+            this.wrap[index].checked=true
+            // this.count+=this.wrap[index].num
+        },
     }
 }
 </script>
 
 <style scoped>
+/* .notclick{
+  pointer-events: none;
+} */
 .box {
     display: flex;
     flex-direction: column;
@@ -317,11 +440,195 @@ a{
 }
 .item-list-p2{
     color: #FF6700;
-    font-size: 12px;
+    margin-left: 10px;
+}
+.item-list-p3{
+    font-size: 16px;
 }
 .shoppingp{
     margin-left: 10px;
     color: #3C3C3C;
+    font-size: 15px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/* 购物车 */
+.cart-item-left{
+    /* width: 30%; */
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 10px;
+}
+.cart-item-left-img{
+    width: 20px;
+    height: 20px;
+}
+
+.cart-img-box{
+    /* width: 280px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+.cart-img{
+    width: 120px;
+    height: 100px;
+}
+
+.cart-title{
+    color: #666666;
+    font-size: 15px;
+    margin: 3px;
+    width: 70%;
+}
+.cart-price{
+    color: #999999;
+    font-size: 12px;
+    margin: 3px;
+}
+
+.cart-input-left{
+    width: 30%;
+    padding: 3px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background: #f6f6f6;
+}
+.cart-input-left-img{
+    width: 100%;
+}
+.cart-input-right{
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background: #f6f6f6;
+}
+.cart-input-right-img{
+    width: 100%;
+}
+
+.cart-input-content{
+    width: 30%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.cart-del-box{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-del-img{
+    width: 100%;
+}
+
+.cart-box{
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5;
+}
+.cart-item-wrap{
+    /* border: 1px solid red; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+}
+
+.cart-item-content{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    /* margin: 10px;
+    padding: 5px; */
+}
+
+.cart-item-right{
+    padding: 10px 3px;
+}
+
+.cart-item-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart-input-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 30%;
+    margin: 3px;
+    border: 1px solid #e0e0e0;
+}
+
+.tips-box{
+    background: #fff;
+    color: #999999;
+    font-size: 12px;
+    padding: 10px;
+}
+/* 去结算 */
+.cart-bottom-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-bottom-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.cart-bottom-left{
+    background: #fff;
+    padding: 0 20px;
+}
+.cart-item-box{
+    background: #F4F4F4;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cart-btn-box{
+    background: #ff6700;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.cart-bottom-left-item1{
+    letter-spacing: 1.5px;
+    color: #999999;
+    font-size: 14px;
+}
+.cart-bottom-left-item2{
+    font-weight: bolder;
+    color: #FF5722;
+    font-size: 20px;
+    text-align: center;
+}
+.cart-bottom-left-item3{
+    font-weight: normal;
+    color: #999999;
     font-size: 12px;
 }
 </style>
