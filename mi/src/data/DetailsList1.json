@@ -1,0 +1,124 @@
+{
+  "code": 200,
+  "status": "成功",
+  "list": [
+    [
+      {
+        "img":"http://localhost:5500/dist/assets/de1.jpg"
+      },
+      {
+        "img":"http://localhost:5500/dist/assets/de2.jpg"
+      },
+       {
+        "img":"http://localhost:5500/dist/assets/de3.jpg"
+      },
+       {
+        "img":"http://localhost:5500/dist/assets/de4.jpg"
+      },
+       {
+        "img":"http://localhost:5500/dist/assets/de5.jpg"
+      },
+       {
+        "img":"http://localhost:5500/dist/assets/de6.jpg"
+      }
+    ],
+   [
+      {"price":"59"}
+    ],
+    [
+      {"title":"米家驱蚊器 智能版"}
+    ],
+    [
+      {
+        "one":"http://localhost:5500/dist/assets/数字1.png",
+        "two":"http://localhost:5500/dist/assets/数字2.png",
+        "three":"http://localhost:5500/dist/assets/数字3.png",
+        "title1":"智能操控",
+        "title2":"一键循环定时",
+        "title3":"长效驱蚊",
+        "title4":"全场最高立省200元，小米小背包全系列满一件包邮！>",
+        "title5":"米家驱蚊器智能版 白色x1",
+        "img":"http://localhost:5500/dist/assets/wen1.jpg",
+        "title6":"米家驱蚊器智能版",
+        "title7":"驱蚊片 白色",
+        "title8":"米家超级电池4粒装 5号",
+        "price":"59",
+        "title":"米家驱蚊器 智能版"
+      }
+    ],
+    [
+      {
+        "img":"http://localhost:5500/dist/assets/xiang01.jpg",
+        "text": "米家超级电池——容量超级大、重量超级轻",
+        "tou": "http://localhost:5500/dist/assets/xiang001.jpg",
+        "name": "米小米",
+        "price": "58"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiang02.jpg",
+        "text": "米家驱蚊器,一个让你感觉不到存在的产品",
+        "tou": "http://localhost:5500/dist/assets/xiang002.jpg",
+        "name": "大虾",
+        "price": "158"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiang03.jpg",
+        "text": "来喽来喽！春夏清凉必备好物清单",
+        "tou": "http://localhost:5500/dist/assets/xiang003.jpg",
+        "name": "侠路红尘",
+        "price": "289"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiang04.jpg",
+        "text": "730天的小米智慧之家打造之路",
+        "tou": "http://localhost:5500/dist/assets/xiang004.jpg",
+        "name": "醉卧乾坤",
+        "price": "33"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiang05.jpg",
+        "text": "卧室的小米产品不是很多，目前只有，小米插线板，Wifi放大器，小爱音响，驱蚊器，枕头，小夜灯，都是比较实用的",
+        "tou": "http://localhost:5500/dist/assets/xiang001.jpg",
+        "name": "萝卜干干",
+        "price": "5"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiang06.jpg",
+        "text": "米家驱蚊器(新品风扇挥发无加热，温和无感好睡眠三个装，99元众筹价，颜值高又便宜😋",
+        "tou": "http://localhost:5500/dist/assets/xiang002.jpg",
+        "name": "那一抹潇洒",
+        "price": "99"
+      }
+    ],
+    [
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig1.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig2.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig3.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig4.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig5.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig6.jpg"
+      },
+      {
+        "img": "http://localhost:5500/dist/assets/xiangbig7.jpg"
+      }
+    ],
+    
+      {
+        "price":"59",
+        "title":"米家驱蚊器 智能版",
+        "img":"http://localhost:5500/dist/assets/wen1.jpg"
+      }
+    
+  ]
+}

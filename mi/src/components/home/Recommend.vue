@@ -54,8 +54,8 @@
       </div>
 
       <div class="recommend-phone-wrap">
-        <div v-for="item in list[1]" :key="item.item" class="recommend-phone">
-          <img :src="item.img" alt class="recommend-phone-img"  @click="desBtn"/>
+        <div v-for="item in list[1]" :key="item.item" class="recommend-phone" >
+          <img :src="item.img" alt class="recommend-phone-img" @click="desBtn(item.id)"/>
           <div class="recommend-phone-content">
             <p class="recommend-phone-title">{{item.title}}</p>
             <p class="recommend-phone-des">{{item.des}}</p>
@@ -77,7 +77,7 @@
 
       <div class="recommend-television-wrap">
         <div v-for="item in list[2]" :key="item.item" class="recommend-phone">
-          <img :src="item.img" alt class="recommend-phone-img" />
+          <img :src="item.img" alt class="recommend-phone-img" @click="btntv(item.id)"/>
           <div class="recommend-television-content">
             <p class="recommend-television-title">{{item.title}}</p>
             <p class="recommend-phone-des">{{item.des}}</p>
@@ -191,6 +191,7 @@ export default {
       listEle: null,
       scrollTop: 0,
       list:[],
+     
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
@@ -209,11 +210,6 @@ export default {
       return this.$refs.mySwiper.$swiper;
     },
   },
-
-  // 回到顶部
-  // mounted() {
-  //   this.listEle = this.$refs.contactList;
-  // },
 
   created() {
     let that = this;
@@ -253,13 +249,24 @@ export default {
       // console.log(this.$refs.contactList);
       // console.log(back.scrollTop);
     },
-    desBtn(){
+    desBtn(id){
       this.$router.push({
-        path:"/phoneList"
+        path:"/details",
+        query:{
+          id:id,
+        }
       })
-    }
+    },
+    btntv(id){
+      this.$router.push({
+        path:"/details",
+        query:{
+          id:id,
+        }
+      })
   },
-};
+  }
+}
 </script>
 
 <style scoped>

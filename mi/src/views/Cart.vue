@@ -82,9 +82,9 @@
                 <div class="shopping-center-img">
                     <img src="../assets/cai.jpg">
                 </div>
-                <div v-for="item in list" :key="item.price" class="item-listbox" @click="detailsclick">
-                    <img :src="item.src" alt="">
-                    <p class="shoppingp">{{item.text}}</p>
+                <div v-for="item in list" :key="item.price" class="item-listbox" >
+                    <img :src="item.img" alt="" @click="detailsclick(item.id)">
+                    <p class="shoppingp">{{item.title}}</p>
                     <p class="item-list-p2">￥<span class="item-list-p3">{{item.price}}</span></p>
                 </div>
             </div>
@@ -140,6 +140,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data(){
         return {
@@ -148,59 +149,25 @@ export default {
             seen3:false,
             seen4:true,
             seen5:true,
-            list:[
-                {
-                    src:require("../assets/shopping/01.jpg"),
-                    text:"米家驱蚊器 智能版",
-                    price:"59"
-                },
-                {
-                    src:require("../assets/shopping/02.jpg"),
-                    text:"米家直流变频落地扇1x",
-                    price:"299"
-                },
-                {
-                    src:require("../assets/shopping/03.jpg"),
-                    text:"手机USB数据线",
-                    price:"9.9"
-                },
-                {
-                    src:require("../assets/shopping/04.jpg"),
-                    text:"飞利浦吸顶灯",
-                    price:"199"
-                },
-                {
-                    src:require("../assets/shopping/05.jpg"),
-                    text:"小米手环4",
-                    price:"69"
-                },
-                {
-                    src:require("../assets/shopping/06.jpg"),
-                    text:"小米USB U盘",
-                    price:"99"
-                },
-                {
-                    src:require("../assets/shopping/07.jpg"),
-                    text:"Redmi 波轮洗衣机",
-                    price:"399"
-                },
-                {
-                    src:require("../assets/shopping/08.jpg"),
-                    text:"小米 小爱 智能闹钟",
-                    price:"129"
-                },
-                {
-                    src:require("../assets/shopping/09.jpg"),
-                    text:"小米电视4S",
-                    price:"1119"
-                },
-                {
-                    src:require("../assets/shopping/10.jpg"),
-                    text:"Redmi 全自动波轮洗衣机",
-                    price:"899"
-                }
-            ]
+            list:[],
         }
+    },
+    // axios请求
+    created() {
+      let url = `http://127.0.0.1:5500/dist/data/CartList.json`;
+      let that = this;
+      console.log("chengg");
+      axios
+        .get(url)
+        .then(function (response) {
+          if (response.data.code == 200) {
+            console.log(response);
+            that.list = response.data.list;
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
     computed:{
         wrap () {
@@ -249,9 +216,12 @@ export default {
                 path:"/login"//登录界面
             })
         },
-        detailsclick(){
+        detailsclick(id){
             this.$router.push({
-                path:"/details"//详情页面
+                path:"/details",//详情页面
+                 query:{
+                    id:id
+                }
             })
         },
         // 页面切换
@@ -294,9 +264,7 @@ export default {
 </script>
 
 <style scoped>
-/* .notclick{
-  pointer-events: none;
-} */
+
 .box {
     display: flex;
     flex-direction: column;
