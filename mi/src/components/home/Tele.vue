@@ -368,7 +368,7 @@ export default {
     },
     created() {
         let that = this;
-        let url = "http://localhost:5500/dist/data/Tlel.json";
+        let url = "http://localhost:5500/dist/data/TlelList.json";
         axios
         .get(url)
         .then(function (respone) {

@@ -1,0 +1,972 @@
+{
+    "code": 200, 
+    "status": "成功",
+    "list":[
+     
+    [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米手机/02.png", 
+                "title":"小米10青春"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米手机/03.png", 
+                "title":"小米10pro"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米手机/04.png", 
+                "title":"小米10"
+            }
+        ],
+       [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米手机/05.png",
+               "title": "小米MIX Alpha"
+            }
+        ],
+         [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米手机/06.png",
+                "title": "小米手机保护壳"
+            }
+        ],
+        [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/08.png",
+               "title": "k30 pro"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/09.png",
+                "title": "k30 pro 变焦版"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/10.png",
+                "title": "Redmi k30i"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/11.png",
+               "title": "Redmi k30i 4G"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/12.png",
+               "title": "Redmi k30i 5G"
+            }
+        ],
+        [
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/13.png",
+                "title": "10X 5G"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/Redmi手机/14.png",
+                "title": "10X pro 5G"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/Redmi手机/15.png",
+                "title": "10X 4G"
+            }
+        ],
+         [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/16.png",
+                "title": "Redmi 9A"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/17.png",
+                "title": "Redmi 9"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/18.png",
+                "title": "Redmi 8"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/19.png",
+                "title": "Redmi 8A"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/20.png",
+               "title": "Redmi 7A"
+            }
+        ],
+        [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/22.gif",
+                "title": "Note 8 pro"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/Redmi手机/21.gif",
+                "title": "Redmi Note 8"
+            }
+        ],
+       [
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/Redmi手机/23.jpg",
+                "title": "Redmi手机保护壳"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/Redmi手机/24.png",
+                "title": "Redmi手机贴膜"
+            }
+        ],
+      [
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/01.png",
+                "title": "黑鲨手机3S"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/01.png",
+                "title": "黑鲨手机3"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/01.png",
+               "title": "黑鲨手机3 pro"
+            }
+        ],
+       [
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/黑鲨手机/25.png",
+                "title": "黑鲨电竞手游"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/26.png",
+                "title": "散热背夹 pro"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/27.png",
+                "title": "黑鲨磁吸充电线"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/25.png",
+                "title": "黑鲨电竞手游"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/黑鲨手机/26.png",
+                "title": "散热背夹 pro"
+            },
+            {
+                "phoneimg":"http://127.0.0.1:5500/dist/assets/image/黑鲨手机/27.png",
+                "title": "黑鲨磁吸充电线"
+            },
+            {
+                "phoneimg": "http://127.0.0.1:5500/dist/assets/image/黑鲨手机/27.png",
+                "title": "黑鲨磁吸充电线"
+            }
+        ],
+        [
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/01.png",
+               "title": "6GB+64GB"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/01.png",
+               "title": "8GB+128GB"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/01.png",
+               "title": "8GB+256GB"
+            }
+        ],
+       [
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/02.png",
+               "title":"8GB+256GB"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/02.png",
+               "title": "12GB+256GB"
+            }
+        ],
+        [
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/5G合约机/03.png",
+               "title": "12GB+256GB"
+            }
+        ],
+       
+        [
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/28.png",
+               "title": "心电T恤"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/29.png",
+               "title": "吸尘器"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/30.png",
+               "title": "真无线蓝牙耳机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/31.png",
+               "title": "立式无线充插座"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/32.png",
+               "title": "咖啡机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/28.png",
+               "title": "心电T恤"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/29.png",
+               "title": "吸尘器"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/30.png",
+               "title": "真无线蓝牙耳机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/31.png",
+               "title": "立式无线充插座"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/32.png",
+               "title": "咖啡机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/28.png",
+               "title": "心电T恤"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/29.png",
+               "title": "吸尘器"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/30.png",
+               "title": "真无线蓝牙耳机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/31.png",
+               "title": "立式无线充插座"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/32.png",
+               "title": "咖啡机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/28.png",
+               "title": "心电T恤"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/29.png",
+               "title": "吸尘器"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/30.png",
+               "title": "真无线蓝牙耳机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/31.png",
+               "title": "立式无线充插座"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/32.png",
+               "title": "咖啡机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/29.png",
+               "title": "吸尘器"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/30.png",
+               "title": "真无线蓝牙耳机"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/31.png",
+               "title": "立式无线充插座"
+            },
+            {
+               "phoneimg": "http://127.0.0.1:5500/dist/assets/image/小米众筹/32.png",
+               "title": "咖啡机"
+            }
+        ],
+       
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/34.png",
+               "title":"32-40英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/35.png",
+               "title":"43英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/36.png",
+               "title":"49-50英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/37.png",
+               "title":"55-60英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/34.png",
+               "title":"32-40英寸"},
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/35.png",
+               "title":"43英寸"
+            }
+        ],
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/38.png",
+               "title":"盒子4"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/38.png",
+               "title":"盒子4"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/38.png",
+               "title":"盒子4"
+            }
+        ],
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/39.jpg",
+               "title":"小米电视音箱"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/39.jpg",
+               "title":"小米电视音箱"
+            }
+        ],
+       [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/40.png",
+               "title":"会员卡"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电视/41.jpg",
+               "title":"遥控器"
+            }
+        ],
+        
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/42.png",
+               "title":"冰箱"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/43.png",
+               "title":"壁挂空调"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/44.png",
+               "title":"立式空调"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/45.png",
+               "title":"滚筒洗衣机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/46.png",
+               "title":"波轮洗衣机"},
+                {"phoneimg":"http://127.0.0.1:5500/dist/assets/image/大家电/42.png",
+               "title":"干衣机"
+            }
+        ],
+     
+         [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/47.png",
+               "title":"RedmiBook 16"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/47.png",
+               "title":"RedmiBook 14"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/47.png",
+               "title":"RedmiBook 13"
+            }
+        ],
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/48.png",
+               "title":"Pro 15.6"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/49.png",
+               "title":"显示器"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/48.png",
+               "title":"Pro 15.6"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/49.png",
+               "title":"显示器"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/48.png",
+               "title":"Pro 15.6"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/49.png",
+               "title":"显示器"
+            }
+        ],
+         [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/50.png",
+               "title":"键盘套装"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/51.png",
+               "title":"鼠标"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/50.png",
+               "title":"键盘套装"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/51.png",
+               "title":"鼠标"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/50.png",
+               "title":"键盘套装"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/51.png",
+               "title":"鼠标"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/电脑办公/51.png",
+               "title":"鼠标"
+            }
+        ],
+   
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/05.png",
+               "title":"Redmi 8英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/06.png",
+               "title":"小米 8英寸"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/07.png",
+               "title":"小米 4英寸"
+            }
+        ],
+         [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/01.png",
+               "title":"小爱音箱 Art"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/02.png",
+               "title":"小爱音箱"
+            }, 
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/03.png",
+               "title":"小爱智能闹钟"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/04.png",
+               "title":"小爱老师"
+            }, 
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/01.png",
+               "title":"小爱音箱 Art"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/02.png",
+               "title":"小爱音箱"
+            }, 
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/03.png",
+               "title":"小爱智能闹钟"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/04.png",
+               "title":"小爱老师"
+            }, 
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/01.png",
+               "title":"小爱音箱 Art"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/02.png",
+               "title":"小爱音箱"
+            }, 
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/小爱智能/03.png",
+               "title":"小爱智能闹钟"
+            }
+        ],
+      
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/08.png",
+               "title":"Redmi AX5"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/09.png",
+               "title":"AX1800"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/10.png",
+               "title":"AIoT AX3600"
+            }
+        ],
+       [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/01.png",
+               "title":"Pro 15.6"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/02.png",
+               "title":"显示器"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/03.png",
+               "title":"Pro 15.6"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/04.png",
+               "title":"显示器"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/05.png",
+               "title":"Pro 15.6"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/06.png",
+               "title":"显示器"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/01.png",
+               "title":"Pro 15.6"
+            },
+                {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/02.png",
+               "title":"显示器"
+            }
+        ],
+       [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/11.png",
+               "title":"键盘套装"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/12.png",
+               "title":"鼠标"
+            }
+        ],
+         [
+            {   
+           "phoneimg":"http://127.0.0.1:5500/dist/assets/image/路由/07.png",
+           "title":"键盘套装"
+            }
+        ],
+        
+      [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/01.png",
+               "title":"空气净化器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/02.png",
+               "title":"扫地机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/03.png",
+               "title":"吸尘器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/04.png",
+               "title":"新风机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/05.png",
+               "title":"电风扇"},
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/06.png",
+               "title":"晾衣机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/07.png",
+               "title":"电暖气"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/01.png",
+               "title":"空气净化器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/02.png",
+               "title":"扫地机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/03.png",
+               "title":"吸尘器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/04.png",
+               "title":"新风机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/05.png",
+               "title":"电风扇"},
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/06.png",
+               "title":"晾衣机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/07.png",
+               "title":"电暖气"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/06.png",
+               "title":"晾衣机"
+            },
+            {"phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/07.png",
+               "title":"电暖气"
+            }
+        ], 
+       
+         [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/08.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/09.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/10.png",
+               "title":"电饭煲"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/11.png",
+               "title":"烟机灶具"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/08.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/09.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/10.png",
+               "title":"电饭煲"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/11.png",
+               "title":"烟机灶具"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/08.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/09.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/10.png",
+               "title":"电饭煲"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/11.png",
+               "title":"烟机灶具"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/生活电器/11.png",
+               "title":"烟机灶具"
+            }
+        ],
+       
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/01.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/02.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/03.png",
+               "title":"电饭煲"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/04.png",
+               "title":"烟机灶具"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/05.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/06.png",
+               "title":"洗碗机"
+            }
+        ],
+
+        [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/01.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/02.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/03.png",
+               "title":"电饭煲"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/04.png",
+               "title":"烟机灶具"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/05.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/06.png",
+               "title":"洗碗机"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/01.png",
+               "title":"净水器"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/02.png",
+               "title":"洗碗机"
+            },
+            {
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/03.png",
+               "title":"电饭煲"
+            },
+            
+            {"phoneimg":"http://127.0.0.1:5500/dist/assets/image/智能穿戴/04.png",
+               "title":"烟机灶具"
+            }
+        ], 
+ 
+      [
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/05.png",
+               "title":"助力车"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/06.png",
+               "title":"平衡车"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/07.png",
+               "title":"滑板车"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/08.png",
+               "title":"对讲"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/05.png",
+               "title":"助力车"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/08.png",
+               "title":"对讲"
+            },
+            {   
+               "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/05.png",
+               "title":"助力车"
+            }
+            ], 
+          [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/01.png",
+                   "title":"智能后视镜"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/02.png",
+                   "title":"车充"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/03.png",
+                   "title":"停车牌"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/车载出行/04.png",
+                   "title":"香薰"
+                }
+            ], 
+          
+           [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/01.png",
+                   "title":"电子体温计"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/02.jpg",
+                   "title":"洗手机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/03.png",
+                   "title":"MIJOY粘毛器"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/04.png",
+                   "title":"纸巾"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/05.png",
+                   "title":"毛巾浴巾"
+                }
+            ], 
+            [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/07.png",
+                   "title":"成人电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/08.png",
+                   "title":"儿童电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/10.png",
+                   "title":"剃须刀"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/09.png",
+                   "title":"吹风机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/07.png",
+                   "title":"成人电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/08.png",
+                   "title":"儿童电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/10.png",
+                   "title":"剃须刀"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/09.png",
+                   "title":"吹风机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/07.png",
+                   "title":"成人电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/08.png",
+                   "title":"儿童电动牙刷"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/10.png",
+                   "title":"剃须刀"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/09.png",
+                   "title":"吹风机"
+                }
+            ],
+             [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/11.png",
+                   "title":"电子体温计"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/12.png",
+                   "title":"洗手机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/13.png",
+                   "title":"MIJOY粘毛器"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/14.png",
+                   "title":"纸巾"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/11.png",
+                   "title":"毛巾浴巾"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/11.png",
+                   "title":"电子体温计"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/12.png",
+                   "title":"洗手机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/个护健康/13.png",
+                   "title":"MIJOY粘毛器"
+                }
+             ],  
+          
+             [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/12.png",
+                   "title":"户外蓝牙音箱"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/13.png",
+                   "title":"小爱音箱"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/14.png",
+                   "title":"蓝牙音箱"
+                }
+                
+            ], 
+            [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/04.png",
+                   "title":"蓝牙耳机"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/05.png",
+                   "title":"线控耳机"
+                }
+               
+            ],
+            [
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/06.png",
+                   "title":"移动电源"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/07.png",
+                   "title":"无线充"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/08.png",
+                   "title":"充电器"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/09.png",
+                   "title":"保护壳"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/06.png",
+                   "title":"移动电源"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/07.png",
+                   "title":"无线充"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/08.png",
+                   "title":"充电器"
+                },
+                {   
+                   "phoneimg":"http://127.0.0.1:5500/dist/assets/image/数码配件/09.png",
+                   "title":"保护壳"
+                }
+            ]
+    ]
+}

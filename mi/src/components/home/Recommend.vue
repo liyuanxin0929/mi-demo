@@ -457,7 +457,7 @@ export default {
 
   created() {
     let that = this;
-    let url = "http://localhost:5500/dist/data/Recommend.json";
+    let url = "http://localhost:5500/dist/data/RecommendList.json";
     axios
       .get(url)
       .then(function (respone) {
