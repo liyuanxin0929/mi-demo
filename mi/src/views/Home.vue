@@ -18,13 +18,13 @@
         <template>
             <div class="box-nav">
                 <div class="title-wrap">
-                    <div class="nav-title" :class="{active:componentNames=='recommend-list'}" @click="titleClick('recommend-list')">推荐</div>
-                    <div class="nav-title" :class="{active:componentNames=='phone-list'}" @click="titleClick('phone-list')">手机</div>
-                    <div class="nav-title" :class="{active:componentNames=='tele-list'}" @click="titleClick('tele-list')">智能</div>
-                    <div class="nav-title" :class="{active:componentNames=='inte-list'}" @click="titleClick('inte-list')">电视</div>
-                    <div class="nav-title" :class="{active:componentNames=='notebook-list'}" @click="titleClick('notebook-list')">笔记本</div>
-                    <div class="nav-title" :class="{active:componentNames=='household-list'}" @click="titleClick('household-list')">家电</div>
-                    <div class="nav-title" :class="{active:componentNames=='living-list'}" @click="titleClick('living-list')">生活周边</div>
+                    <div class="nav-title" :class="{active:componentNames=='recommend-list'}" @click="titleClick('recommend-list',1)">推荐</div>
+                    <div class="nav-title" :class="{active:componentNames=='phone-list'}" @click="titleClick('phone-list',2)">手机</div>
+                    <div class="nav-title" :class="{active:componentNames=='tele-list'}" @click="titleClick('tele-list',3)">智能</div>
+                    <div class="nav-title" :class="{active:componentNames=='inte-list'}" @click="titleClick('inte-list',4)">电视</div>
+                    <div class="nav-title" :class="{active:componentNames=='notebook-list'}" @click="titleClick('notebook-list',5)">笔记本</div>
+                    <div class="nav-title" :class="{active:componentNames=='household-list'}" @click="titleClick('household-list',6)">家电</div>
+                    <div class="nav-title" :class="{active:componentNames=='living-list'}" @click="titleClick('living-list',7)">生活周边</div>
                 </div>
                 <div class="img-wrap" @click="arrowBtn1">
                     <img src="../assets/箭头.png" alt class="nav-img" />
@@ -59,14 +59,13 @@
         <div class="mask" v-if="mask"></div>
 
         <!-- 组件 -->
-            <!-- <transition>  -->
+        <div style="height:100%">
+
+        
+            <transition :name="rightLeft"> 
                 <component :is="componentNames"></component>
-            <!-- </transition> -->
-            
-        
-        
-
-
+            </transition> 
+        </div>
         <!-- 底部 -->
         <div class="box-bottom">
             <div class="bottom-btn">
@@ -109,6 +108,8 @@ export default {
             seen: false,
             mask: false,
             componentNames: "recommend-list",
+            isnum:0,
+            rightLeft:"left"
         }
     },
     components: {
@@ -122,8 +123,17 @@ export default {
     },
     methods: {
         // 组件切换
-        titleClick(name) {
+        titleClick(name,num) {
             this.componentNames = name;
+            
+            if(this.isnum > num){
+                this.rightLeft = "left"
+            } else {
+                this.rightLeft = "right"
+            }
+
+            this.isnum = num;
+            // console.log(this.$route.meta);
         },
         //推荐列表切换
         arrowBtn1() {
@@ -161,7 +171,7 @@ export default {
                 path:"/my"
             })
         }
-    }
+    },
 }
 </script>
 
@@ -217,6 +227,10 @@ a{
 
 /* 底部 */
 .box-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10px;
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
@@ -348,14 +362,25 @@ a{
 }
 
 /* 过渡效果 */
-/* .v-enter{
-    opacity: 0;
+.left-enter{
+    transform: translateX(-5px);
 }
-.v-enter-to{
-    transform: translateX(-20px);
+.left-enter-active,
+.left-leave-active{
+    transition:all  0.3s;
 }
-.v-enter-active,
-.v-leave-active{
-    transition: all 0.5s;
-} */
+.left-leave-to{
+    transform: translateX(5px);
+}
+
+.right-enter{
+    transform: translateX(5px);
+}
+.right-enter-active,
+.right-leave-active{
+    transition:all 0.3s;
+}
+.right-leave-to{
+    transform: translateX(-5px);
+}
 </style>

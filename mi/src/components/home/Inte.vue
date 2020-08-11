@@ -2,9 +2,9 @@
     <!-- 电视 -->
     <div class="inte-box" ref="contactList" @scroll="divScroll" id="back" >
         <!-- 回到顶部 -->
-            <div class="back-top-wrap"  v-if="seen" @click="backTop">
-                <img src="../../assets/回到顶部.png" class="backTop" />
-            </div>
+        <div class="back-top-wrap"  v-if="seen" @click="backTop">
+            <img src="../../assets/回到顶部.png" class="backTop" />
+        </div>
         <div>
             <img src="../../assets/inte/01.jpg" class="inte-box-img">
         </div>
@@ -62,7 +62,6 @@
                 </div>
             </div>    
         </div>
-          <!-- </div> -->
     </div>
 </template>
 
@@ -71,61 +70,13 @@ import axios from "axios";
 export default {
     data(){
         return {
+            // meta:{
+            //     index:3
+            // },
             seen:false,
             listEle:null,
             scrollTop:0,
-            list:[
-            //     {
-            //         img:require("../../assets/inte/02.jpg"),
-            //         title:"小米电视4A 32英寸",
-            //         des:"人工智能系统，高清液晶屏，64",
-            //         price:"￥599",
-            //         i:"￥799",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img:require("../../assets/inte/03.jpg") ,
-            //         title:"全面屏电视 55英寸",
-            //         des:"潮流全面屏设计，4K超清画质",
-            //         price:"￥1599",
-            //         i:"￥1999",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img:require("../../assets/inte/04.jpg"),
-            //         title:"全面屏电视 65英寸",
-            //         des:"震撼大屏，时尚全面屏",
-            //         price:"￥2499",
-            //         i:"￥3099",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img:require("../../assets/inte/05.jpg"),
-            //         title:"小米电视4C 43英寸",
-            //         des:"FHD全高清屏，钢琴烤漆",
-            //         price:"￥999",
-            //         i:"￥1399",
-            //         btn:"立即购买"
-            //     }
-            // ],
-            // wrap:[
-            //     {
-            //         img:require("../../assets/inte/07.jpg"),
-            //         title:"Redmi 智能电视 X55",
-            //         des:"超高清广色域，还原真实影像",
-            //         price:"￥2166",
-            //         i:"￥2299",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img:require("../../assets/inte/08.jpg") ,
-            //         title:"Redmi 智能电视 X65",
-            //         des:"4K超清画质，细腻如真",
-            //         price:"￥2966",
-            //         i:"￥3299",
-            //         btn:"立即购买"
-            //     }
-            ]
+            list:[]
         }
     },
     // 回到顶部
@@ -135,14 +86,13 @@ export default {
      created() {
     let url = `http://127.0.0.1:5500/dist/data/InteList.json`;
     let that = this;
-    console.log("chengg");
     axios
       .get(url)
       .then(function (response) {
         if (response.data.code == 200) {
-          console.log(response);
+        //   console.log(response);
           that.list = response.data.list;
-          console.log(that.list);
+        //   console.log(that.list);
         }
       })
       .catch(function (error) {

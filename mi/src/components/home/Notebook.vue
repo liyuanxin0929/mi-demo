@@ -2,9 +2,9 @@
     <!-- 笔记本 -->
     <div class="note-box" ref="contactList" @scroll="divScroll" id="back">
         <!-- 回到顶部 -->
-            <div class="back-top-wrap"  v-if="seen" @click="backTop">
-                <img src="../../assets/回到顶部.png" class="backTop" />
-            </div>
+        <div class="back-top-wrap"  v-if="seen" @click="backTop">
+            <img src="../../assets/回到顶部.png" class="backTop" />
+        </div>
         <div>
             <img src="../../assets/notebook/11.jpg" class="note-box-img">
         </div>
@@ -32,46 +32,13 @@ import axios from "axios";
 export default {
     data(){
         return {
+            // meta:{
+            //     index:4
+            // },
             seen:false,
             listEle:null,
             scrollTop:0,
-            list:[
-            //     {
-            //         img:require("../../assets/notebook/05.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/06.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/07.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/08.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/09.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/10.jpg")
-            //     }
-            // ],
-            // wrap:[
-            //     {
-            //         img:require("../../assets/notebook/12.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/13.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/14.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/15.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/notebook/16.jpg")
-            //     }
-            ]
+            list:[]
         }
     },
     // 回到顶部
@@ -81,14 +48,13 @@ export default {
     created() {
         let url = `http://127.0.0.1:5500/dist/data/NotebookList.json`;
         let that = this;
-        console.log("chengg");
         axios
         .get(url)
         .then(function (response) {
             if (response.data.code == 200) {
-            console.log(response);
+            // console.log(response);
             that.list = response.data.list;
-            console.log(that.list);
+            // console.log(that.list);
             }
         })
         .catch(function (error) {

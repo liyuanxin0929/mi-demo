@@ -1,5 +1,5 @@
 <template>
-  <div class="bigbox">
+  <div class="bigbox" id="back">
     <div class="detail-topbox" ref="topbox">
       <div class="detail-topbox-item" v-if="seen" @click="goclick">
         <img src="../assets/向左圆箭头.png" />
@@ -241,6 +241,7 @@ export default {
       isdis:false,
       scrolltop:0,
       seen: true,
+      back:true,
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
@@ -433,7 +434,7 @@ export default {
       }else {
         this.seen11=false
       }
-    }
+    },
   }
 };
 </script>
@@ -882,5 +883,17 @@ export default {
   color: #f0f0f0;
   margin-bottom: 15px;
   z-index: 999;
+}
+
+/* 回到顶部 */
+.back-top-wrap {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 10%;
+}
+
+.backTop {
+  width: 100%;
 }
 </style>

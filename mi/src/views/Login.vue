@@ -153,18 +153,21 @@ export default {
 .login-top img {
     width: 16px;
     height: 16px;
+    border-radius: 5px;
 }
 .login-top1 img {
     width: 50px;
     height: 50px;
+    border-radius: 5px;
 }
 .login-top1 {
     display: flex;
     justify-content: center;
 }
 .itemm {
-    font-size: 18px;
-    margin-top: 15px;
+    font-size: 14px;
+    color: #000000;
+    margin-top: 10px;
 }
 
 /* 账号密码 */
@@ -172,7 +175,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0px;
+    /* padding: 10px 0px; */
     font-size: 18px;
     border-bottom: 0.1px solid #b6b6b6;
     height: 55px;
@@ -182,7 +185,7 @@ export default {
     outline: none;
     border: none;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .login-gan {
     display: flex;
@@ -239,10 +242,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .login-listt {
     margin: 5px;
+    font-size: 14px;
 }
 .login-list-item1 {
     display: flex;
@@ -250,7 +254,7 @@ export default {
     padding: 0px 15px;
     font-size: 10px;
     color: #9b9b9b;
-    margin-top: 30px;
+    margin-top: 20px;
     align-items: center;
 }
 .listitem {
@@ -264,13 +268,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin: 10px 10px; */
 }
 .listitem1 img {
     width: 30px;
     height: 30px;
 }
 .listitem1 {
-    margin: 25px 12px;
+    margin: 10px 10px;
 }
 
 /* 语言 */
@@ -279,7 +284,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 14px;
 }
 .jianbox {

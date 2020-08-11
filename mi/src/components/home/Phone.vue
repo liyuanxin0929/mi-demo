@@ -2,9 +2,9 @@
     <!-- 手机 -->
     <div class="phone-box" ref="contactList" @scroll="divScroll" id="back">
         <!-- 回到顶部 -->
-            <div class="back-top-wrap"  v-if="seen" @click="backTop">
-                <img src="../../assets/回到顶部.png" class="backTop" />
-            </div>
+        <div class="back-top-wrap"  v-if="seen" @click="backTop">
+            <img src="../../assets/回到顶部.png" class="backTop" />
+        </div>
         <!-- 轮播 -->
         <div class="phone-top">
             <swiper ref="mySwiper" :options="swiperOptions" >
@@ -55,8 +55,8 @@
                         <span class="phone-item-i">{{item.i}}</span>
                     </p>
                     <div class="phone-btn-box2">
-                            <p class="phone-item-btn">{{item.btn}}</p> 
-                        </div>
+                        <p class="phone-item-btn">{{item.btn}}</p> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,71 +71,7 @@ export default {
             seen:false,
             listEle:null,
             scrollTop:0,
-            list:[
-            //     {
-            //         img: require("../../assets/phone/04.jpg"),
-            //         title:"小米10",
-            //         des:"骁龙865处理器/1亿像素8K电影相机",
-            //         price:"￥3799起",
-            //         i:"￥3999",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img: require("../../assets/phone/05.jpg"),
-            //         title:"小米10 Pro",
-            //         des:"骁龙865处理器/50倍数字变焦",
-            //         price:"￥4999起",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img: require("../../assets/phone/06.jpg"),
-            //         title:"Redmi K30 Pro",
-            //         des:"双模5G，骁龙865，弹出全面屏，640G",
-            //         price:"￥2499起",
-            //         i:"￥2699",
-            //         btn:"立即购买"
-            //     },
-            //     {
-            //         img: require("../../assets/phone/07.jpg"),
-            //         title:"Redmi K30 5G",
-            //         des:"双模5G，120HZ流速屏，索尼6400",
-            //         price:"￥1699起",
-            //         i:"￥1999",
-            //         btn:"立即购买"
-            //     }
-            // ],
-            // wrap:[
-            //     {
-            //         img: require("../../assets/phone/s01.jpg"),
-            //         title: "Redmi 8A",
-            //         des: "5000mAh超长续航",
-            //         price: "￥599起",
-            //         i: "￥699",
-            //         btn: "立即购买",
-            //     },
-            //     {
-            //         img: require("../../assets/phone/s02.jpg"),
-            //         title: "Redmi 8",
-            //         des: "5000mAh超长续航",
-            //         price: "￥799起",
-            //         btn: "立即购买",
-            //     },
-            //     {
-            //         img: require("../../assets/phone/s03.jpg"),
-            //         title: "Redmi Note 8",
-            //         des: "千元4800万四摄",
-            //         price: "￥899起",
-            //         i: "￥999",
-            //         btn: "立即购买",
-            //     },
-            //     {
-            //         img: require("../../assets/phone/s04.jpg"),
-            //         title: "Redmi K30 Pro 变焦版",
-            //         des: "双模5G，骁龙865，超长续航",
-            //         price: "￥3399起",
-            //         btn: "立即购买",
-            //     }
-            ],
+            list:[],
             swiperOptions: {
                 pagination: {
                     el: ".swiper-pagination",
@@ -161,14 +97,13 @@ export default {
     created() {
         let url = `http://127.0.0.1:5500/dist/data/PhoneList.json`;
         let that = this;
-        console.log("chengg");
         axios
         .get(url)
         .then(function (response) {
             if (response.data.code == 200) {
-            console.log(response);
+            // console.log(response);
             that.list = response.data.list;
-            console.log(that.list);
+            // console.log(that.list);
             }
         })
         .catch(function (error) {

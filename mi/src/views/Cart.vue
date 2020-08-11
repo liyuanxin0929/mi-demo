@@ -439,6 +439,7 @@ a{
 }
 .item-listbox{
     width: 49.5%;
+    margin-bottom: 10px;
 }
 .item-listbox img{
     width: 100%;
@@ -446,15 +447,16 @@ a{
 }
 .item-list-p2{
     color: #FF6700;
+    font-size: 12px;
     margin-left: 10px;
 }
 .item-list-p3{
-    font-size: 16px;
+    font-size: 12px;
 }
 .shoppingp{
     margin-left: 10px;
     color: #3C3C3C;
-    font-size: 15px;
+    font-size: 12px;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;

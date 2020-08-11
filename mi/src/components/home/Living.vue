@@ -2,9 +2,9 @@
     <!-- 生活周边 -->
     <div class="living-box" ref="contactList" @scroll="divScroll" id="back">
         <!-- 回到顶部 -->
-            <div class="back-top-wrap"  v-if="seen" @click="backTop">
-                <img src="../../assets/回到顶部.png" class="backTop" />
-            </div>
+        <div class="back-top-wrap"  v-if="seen" @click="backTop">
+            <img src="../../assets/回到顶部.png" class="backTop" />
+        </div>
         <div>
             <img src="../../assets/living/01.jpg" class="living-box-img">
         </div>
@@ -39,91 +39,13 @@ import axios from "axios";
 export default {
     data(){
         return {
+            // meta:{
+            //     index:6
+            // },
             seen:false,
             listEle:null,
             scrollTop:0,
-            list:[
-            //     {
-            //         img:require("../../assets/living/02.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/living/03.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/living/04.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/living/05.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/living/06.jpg")
-            //     },
-            //     {
-            //         img:require("../../assets/living/07.jpg")
-            //     }
-            // ],
-            // wrap:[
-            //     {
-            //         img:require("../../assets/living/10.jpg"),
-            //         title:"驱蚊器基础版",
-            //         des:"3个装，长效驱蚊",
-            //         price:"￥99",
-            //         i:"￥129"
-            //     },
-            //     {
-            //         img:require("../../assets/living/11.jpg"),
-            //         title:"支架式自拍杆",
-            //         des:"解放双手，定格更美",
-            //         price:"￥69",
-            //         i:"￥89"
-            //     },
-            //     {
-            //         img:require("../../assets/living/12.jpg"),
-            //         title:"小米小背包",
-            //         des:"城市休闲，简单",
-            //         price:"￥24.9起",
-            //     },
-            //     {
-            //         img:require("../../assets/living/11.jpg"),
-            //         title:"支架式自拍杆",
-            //         des:"解放双手，定格更美",
-            //         price:"￥69",
-            //         i:"￥89"
-            //     },
-            //     {
-            //         img:require("../../assets/living/12.jpg"),
-            //         title:"小米小背包",
-            //         des:"城市休闲，简单",
-            //         price:"￥24.9起",
-            //     },
-            //     {
-            //         img:require("../../assets/living/10.jpg"),
-            //         title:"驱蚊器基础版",
-            //         des:"3个装，长效驱蚊",
-            //         price:"￥99",
-            //         i:"￥129"
-            //     },
-            //     {
-            //         img:require("../../assets/living/11.jpg"),
-            //         title:"支架式自拍杆",
-            //         des:"解放双手，定格更美",
-            //         price:"￥69",
-            //         i:"￥89"
-            //     },
-            //     {
-            //         img:require("../../assets/living/10.jpg"),
-            //         title:"驱蚊器基础版",
-            //         des:"3个装，长效驱蚊",
-            //         price:"￥99",
-            //         i:"￥129"
-            //     },
-            //     {
-            //         img:require("../../assets/living/12.jpg"),
-            //         title:"小米小背包",
-            //         des:"城市休闲，简单",
-            //         price:"￥24.9起",
-            //     },
-            ]
+            list:[]
         }
     },
     // 回到顶部
@@ -133,14 +55,13 @@ export default {
      created() {
     let url = `http://127.0.0.1:5500/dist/data/LivingList.json`;
     let that = this;
-    console.log("chengg");
     axios
       .get(url)
       .then(function (response) {
         if (response.data.code == 200) {
-          console.log(response);
+        //   console.log(response);
           that.list = response.data.list;
-          console.log(that.list);
+        //   console.log(that.list);
         }
       })
       .catch(function (error) {

@@ -2,9 +2,9 @@
     <!-- 家电 -->
     <div class="house-box" ref="contactList" @scroll="divScroll" id="back">
         <!-- 回到顶部 -->
-            <div class="back-top-wrap"  v-if="seen" @click="backTop">
-                <img src="../../assets/回到顶部.png" class="backTop" />
-            </div>
+        <div class="back-top-wrap"  v-if="seen" @click="backTop">
+            <img src="../../assets/回到顶部.png" class="backTop" />
+        </div>
         <div>
             <img src="../../assets/household/01.jpg" class="note-box-img">
         </div>
@@ -29,33 +29,16 @@ import axios from "axios";
 export default {
     data(){
         return {
+            meta:{
+                index:5
+            },
+            
             seen:false,
             listEle:null,
             scrollTop:0,
-            list:[
-            //     {
-            //         img:require("../../assets/household/02.jpg"),
-            //         title:"十字门冰箱 4开门",
-            //         des:"风冷无霜，长久保鲜",
-            //         price:"￥2999",
-            //         i:"￥3299"
-            //     },
-            //     {
-            //         img:require("../../assets/household/03.jpg"),
-            //         title:"风冷三门冰箱",
-            //         des:"三门保鲜，无霜养鲜",
-            //         price:"￥1588",
-            //         i:"￥1699"
-            //     },
-            //     {
-            //         img:require("../../assets/household/04.jpg"),
-            //         title:"两门冰箱 160L",
-            //         des:"小巧能装，速冻养鲜",
-            //         price:"￥929",
-            //         i:"￥1099"
-            //     }
-            ]
+            list:[]
         }
+        // console.log(this.$route.meta)
     },
     // 回到顶部
     mounted() {
@@ -68,9 +51,9 @@ export default {
         .get(url)
         .then(function (response) {
             if (response.data.code == 200) {
-            console.log(response);
+            // console.log(response);
             that.list = response.data.list;
-            console.log(that.list);
+            // console.log(that.list);
             }
         })
         .catch(function (error) {
@@ -87,11 +70,12 @@ export default {
                 this.seen = false
             }
         },
+        backTop() {
+            let back = document.querySelector("#back");
+            back.scrollTop = 0
+        }
     },
-    backTop() {
-      let back = document.querySelector("#back");
-      back.scrollTop = 0
-    }
+    
 }
 </script>
 
