@@ -54,8 +54,8 @@
       </div>
 
       <div class="recommend-phone-wrap">
-        <div v-for="item in list[1]" :key="item.item" class="recommend-phone" @click="desBtn">
-          <img :src="item.img" alt class="recommend-phone-img" />
+        <div v-for="item in list[1]" :key="item.item" class="recommend-phone" >
+          <img :src="item.img" alt class="recommend-phone-img" @click="desBtn(item.id)"/>
           <div class="recommend-phone-content">
             <p class="recommend-phone-title">{{item.title}}</p>
             <p class="recommend-phone-des">{{item.des}}</p>
@@ -77,7 +77,7 @@
 
       <div class="recommend-television-wrap">
         <div v-for="item in list[2]" :key="item.item" class="recommend-phone">
-          <img :src="item.img" alt class="recommend-phone-img" />
+          <img :src="item.img" alt class="recommend-phone-img" @click="btntv(item.id)"/>
           <div class="recommend-television-content">
             <p class="recommend-television-title">{{item.title}}</p>
             <p class="recommend-phone-des">{{item.des}}</p>
@@ -191,246 +191,7 @@ export default {
       listEle: null,
       scrollTop: 0,
       list:[],
-      // wrap: [
-      //   {
-      //     img: require("../../assets/recommend/s01.png"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s02.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s03.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s04.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s05.jpg"),
-      //   },
-
-      //   {
-      //     img: require("../../assets/recommend/s06.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s07.png"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s08.png"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s09.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/s10.png"),
-      //   },
-      // ],
-      // phoneWrap: [
-      //   {
-      //     img: require("../../assets/recommend/09.jpg"),
-      //     title: "小米10 Pro",
-      //     des: "骁龙865/50倍变焦",
-      //     price: "￥4999起",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/10.jpg"),
-      //     title: "小米10",
-      //     des: "骁龙865/1亿像素相机",
-      //     price: "￥3799起",
-      //     i: "￥3999",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/11.jpg"),
-      //     title: "Redmi K30 4G",
-      //     des: "120Hz流速屏，全速热全速热",
-      //     price: "￥1399起",
-      //     i: "￥1699",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/12.jpg"),
-      //     title: "Redmi K30 5G",
-      //     des: "双模5G，120Hz流速屏",
-      //     price: "￥1699起",
-      //     i: "￥1999",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/13.jpg"),
-      //     title: "Note 8 Pro",
-      //     des: "6400万全场景四摄",
-      //     price: "￥1099起",
-      //     i: "￥1399",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/14.jpg"),
-      //     title: "Redmi Note 8",
-      //     des: "千元4800万四摄",
-      //     price: "￥899起",
-      //     i: "￥999",
-      //     btn: "立即购买",
-      //   },
-      // ],
-      // televisionWrap: [
-      //   {
-      //     img: require("../../assets/recommend/16.jpg"),
-      //     title: "小米电视4A 65英寸",
-      //     des: "4K HDR，人工智能语音",
-      //     price: "￥2499",
-      //     i: "￥2999",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/17.jpg"),
-      //     title: "小米电视4X 43英寸",
-      //     des: "FHD全高清屏，人工智能语音",
-      //     price: "￥999",
-      //     i: "￥1399",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/18.jpg"),
-      //     title: "小米电视4C 50英寸",
-      //     des: "4K HDR，钢琴烤漆",
-      //     price: "￥1599",
-      //     i: "￥1699",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/19.jpg"),
-      //     title: "小米电视4C 55英寸",
-      //     des: "4K HDR，人工智能系统",
-      //     price: "￥1699",
-      //     i: "￥1999",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/20.jpg"),
-      //     title: "小米电视4A 32英寸",
-      //     des: "人工智能系统，高清系统",
-      //     price: "￥599",
-      //     i: "￥799",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/21.png"),
-      //     title: "小米电视4A 50英寸",
-      //     des: "4K HDR，人工智能语音系统",
-      //     price: "￥1499",
-      //     i: "￥1699",
-      //     btn: "立即购买",
-      //   },
-      // ],
-      // notebookWrap: [
-      //   {
-      //     img: require("../../assets/recommend/24.jpg"),
-      //     title: "Air 13.3 2019款",
-      //     des: "新一代独立显卡",
-      //     price: "￥5699起",
-      //     i: "￥5999",
-      //     btn: "立即购买",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/25.jpg"),
-      //     title: "小米笔记本15.6 MXLLL",
-      //     des: "全面均衡的国民轻薄本",
-      //     price: "￥3899起",
-      //     i: "￥4299",
-      //     btn: "立即购买",
-      //   },
-      // ],
-      // householdWrap: [
-      //   {
-      //     img: require("../../assets/recommend/28.jpg"),
-      //     title: "变频 | 米家互联网空调智能",
-      //     des: "变频节能，高效制冷热",
-      //     price: "￥1999",
-      //     i: "￥2699",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/29.jpg"),
-      //     title: "米家洗烘一体机Pro",
-      //     des: "智能洗烘，省心省力",
-      //     price: "￥2999",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/30.jpg"),
-      //     title: "定频 | 米家空调 大1匹",
-      //     des: "出众静音，快速制冷热",
-      //     price: "￥1499",
-      //     i: "￥1799",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/31.jpg"),
-      //     title: "米家互联网洗烘一体机一体机",
-      //     des: "洗的净，烘的干",
-      //     price: "￥2099",
-      //     i: "￥2299",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/32.jpg"),
-      //     title: "自清洁 | 米家互联网空调",
-      //     des: "变频节能省电，自清洁",
-      //     price: "￥1999",
-      //     i: "￥2699",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/33.jpg"),
-      //     title: "Redmi全自动波轮洗衣机",
-      //     des: "一键操作，父母都爱用",
-      //     price: "￥849",
-      //     i: "￥899",
-      //   },
-      // ],
-      // mindWrap: [
-      //   {
-      //     img: require("../../assets/recommend/36.jpg"),
-      //   },
-      //   {
-      //     title: "米家直流变频落地风扇1X",
-      //     des: "模拟自然风算法，支持AI语音",
-      //     price: "￥299",
-      //   },
-      //   {
-      //     title: "小爱音响万能遥控版",
-      //     des: "传统家电秒变智能",
-      //     price: "￥149",
-      //     i: "￥199",
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/37.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/38.jpg"),
-      //   },
-      //   {
-      //     title: "米家照片打印机",
-      //     des: "手机即拍即印",
-      //     price: "￥499",
-      //   },
-      // ],
-      // imagesWrap: [
-      //   {
-      //     img: require("../../assets/recommend/39.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/40.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/41.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/42.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/43.jpg"),
-      //   },
-      //   {
-      //     img: require("../../assets/recommend/44.jpg"),
-      //   },
-      // ],
+     
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
@@ -449,11 +210,6 @@ export default {
       return this.$refs.mySwiper.$swiper;
     },
   },
-
-  // 回到顶部
-  // mounted() {
-  //   this.listEle = this.$refs.contactList;
-  // },
 
   created() {
     let that = this;
@@ -489,13 +245,24 @@ export default {
       // console.log(this.$refs.contactList);
       // console.log(back.scrollTop);
     },
-    desBtn(){
+    desBtn(id){
       this.$router.push({
-        path:"/phoneList"
+        path:"/details",
+        query:{
+          id:id,
+        }
       })
-    }
+    },
+    btntv(id){
+      this.$router.push({
+        path:"/details",
+        query:{
+          id:id,
+        }
+      })
   },
-};
+  }
+}
 </script>
 
 <style scoped>

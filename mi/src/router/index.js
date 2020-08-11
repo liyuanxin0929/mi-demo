@@ -14,7 +14,6 @@ import details from "../views/Details.vue";
 import evaluate from "../views/Evaluate.vue";
 
 
-import phoneList from '../views/PhoneList.vue';
 
 Vue.use(VueRouter)
 
@@ -53,10 +52,6 @@ const routes = [
     component: login
   },
 
-  {
-    path: '/phoneList',
-    component: phoneList
-  }
 ]
 
 const router = new VueRouter({

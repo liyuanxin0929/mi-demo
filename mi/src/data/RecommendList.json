@@ -41,7 +41,8 @@
                 "title": "小米10 Pro",
                 "des": "骁龙865/50倍变焦",
                 "price": "￥4999起",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/10.jpg",
@@ -49,7 +50,8 @@
                 "des": "骁龙865/1亿像素相机",
                 "price": "￥3799起",
                 "i": "￥3999",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/11.jpg",
@@ -57,7 +59,8 @@
                 "des": "120Hz流速屏，全速热全速热",
                 "price": "￥1399起",
                 "i": "￥1699",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/12.jpg",
@@ -65,7 +68,8 @@
                 "des": "双模5G，120Hz流速屏",
                 "price": "￥1699起",
                 "i": "￥1999",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/13.jpg",
@@ -73,7 +77,8 @@
                 "des": "6400万全场景四摄",
                 "price": "￥1099起",
                 "i": "￥1399",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/14.jpg",
@@ -81,7 +86,8 @@
                 "des": "千元4800万四摄",
                 "price": "￥899起",
                 "i": "￥999",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":2
             }
         ],
         [
@@ -91,7 +97,8 @@
                 "des": "4K HDR，人工智能语音",
                 "price": "￥2499",
                 "i": "￥2999",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/17.jpg",
@@ -99,7 +106,9 @@
                 "des": "FHD全高清屏，人工智能语音",
                 "price": "￥999",
                 "i": "￥1399",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
+                
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/18.jpg",
@@ -107,7 +116,8 @@
                 "des": "4K HDR，钢琴烤漆",
                 "price": "￥1599",
                 "i": "￥1699",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/19.jpg",
@@ -115,7 +125,8 @@
                 "des": "4K HDR，人工智能系统",
                 "price": "￥1699",
                 "i": "￥1999",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/20.jpg",
@@ -123,7 +134,8 @@
                 "des": "人工智能系统，高清系统",
                 "price": "￥599",
                 "i": "￥799",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
             },
             {
                 "img": "http://localhost:5500/dist/assets/recommend/21.png",
@@ -131,7 +143,8 @@
                 "des": "4K HDR，人工智能语音系统",
                 "price": "￥1499",
                 "i": "￥1699",
-                "btn": "立即购买"
+                "btn": "立即购买",
+                "id":3
             }
         ],
         [

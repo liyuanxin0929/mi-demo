@@ -1,0 +1,68 @@
+{
+    "code": 200,
+    "status": "成功",
+    "list": [
+        
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/01.jpg",
+                "title":"米家驱蚊器 智能版",
+                "price":"59",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/02.jpg",
+                "title":"米家直流变频落地扇1x",
+                "price":"299",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/03.jpg",
+                "title":"手机USB数据线",
+                "price":"9.9",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/04.jpg",
+                "title":"飞利浦吸顶灯",
+                "price":"199",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/05.jpg",
+                "title":"小米手环4",
+                "price":"69",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/06.jpg",
+                "title":"小米USB U盘",
+                "price":"99",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/07.jpg",
+                "title":"Redmi 波轮洗衣机",
+                "price":"399",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/08.jpg",
+                "title":"小米 小爱 智能闹钟",
+                "price":"129",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/09.jpg",
+                "title":"小米电视4S",
+                "price":"1119",
+                "id":1
+            },
+            {
+                "img":"http://localhost:5500/dist/assets/shopping/10.jpg",
+                "title":"Redmi 全自动波轮洗衣机",
+                "price":"899",
+                "id":1
+            }
+        ]
+    
+}
