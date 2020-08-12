@@ -1,5 +1,5 @@
 <template>
-  <div class="bigbox" id="back">
+  <div class="bigbox">
     <div class="detail-topbox" ref="topbox">
       <div class="detail-topbox-item" v-if="seen" @click="goclick">
         <img src="../assets/向左圆箭头.png" />
@@ -12,19 +12,19 @@
         <span
           class="topbox-item1-list"
           ref="topboxspan1"
-          :class="{active:this.scrolltop>0&&this.scrolltop<943}"
+          :class="{active:this.scrolltop>0&&this.scrolltop<=942}"
           @click="clickone"
         >商品</span>
         <span
           class="topbox-item1-list"
           ref="topboxspan2"
-          :class="{active:this.scrolltop>943&&this.scrolltop<1569}"
+          :class="{active:this.scrolltop>942&&this.scrolltop<=1515}"
           @click="clicktwo($refs.span1.offsetTop)"
         >评价</span>
         <span
           class="topbox-item1-list"
           ref="topboxspan3"
-          :class="{active:this.scrolltop>1569}"
+          :class="{active:this.scrolltop>1515}"
           @click="clicktwo($refs.span2.offsetTop)"
         >详情</span>
       </div>
@@ -58,7 +58,7 @@
           <img src="../assets/en.jpg" />
           <span v-for="item in list[2]" :key="item.item">{{item.title}}</span>
         </div>
-        <div class="detail-center-item2" v-for="item in list[3]" :key="item.item" :item="item">
+        <div class="detail-center-item2" v-for="item in list3" :key="item.item" :item="item">
           <div class="detail-item2-list">
             <img :src="item.one" />
             <span>{{item.title1}}</span>
@@ -71,7 +71,7 @@
             <img :src="item.three" />
             <span>{{item.title3}}</span>
           </div>
-          <div class="detail-center-item3">{{item.title4}}</div>
+          <span class="detail-center-item3">{{item.title4}}</span>
           <div class="kong"></div>
           <div class="detail-center-item4">
             <div>已选</div>
@@ -115,20 +115,20 @@
             <div class="detail-item8-list box">
               <img :src="item.img" />
               <p class="detail-item8-list-p1">{{item.title6}}</p>
-              <p class="detail-item8-list-p2" ref="price1">￥{{price1}}</p>
+              <p class="detail-item8-list-p2" ref="price1">￥{{item.price1}}</p>
             </div>
             <div class="detail-item8-listt1 boxx">+</div>
             <div class="detail-item8-list">
-              <img src="../assets/wen2.jpg" class="item8-img" />
+              <img :src="item.img2" class="item8-img" />
               <p class="detail-item8-list-p1">{{item.title7}}</p>
-              <p class="detail-item8-list-p2">￥{{price2}}</p>
+              <p class="detail-item8-list-p2">￥{{item.price2}}</p>
               <img src="../assets/huigou.png" class="gouimg" v-if="seen22" @click="gou1click" />
               <img src="../assets/honggou.png" class="gouimg" v-else @click="gou1click" />
             </div>
             <div class="detail-item8-list">
-              <img src="../assets/wen3.jpg" class="item8-img" />
+              <img :src="item.img3" class="item8-img" />
               <p class="detail-item8-list-p1">{{item.title8}}</p>
-              <p class="detail-item8-list-p2">￥{{price3}}</p>
+              <p class="detail-item8-list-p2">￥{{item.price3}}</p>
               <img src="../assets/huigou.png" class="gouimg" v-if="seen33" @click="gou2click" />
               <img src="../assets/honggou.png" class="gouimg" v-else @click="gou2click" />
             </div>
@@ -233,9 +233,6 @@ export default {
   data() {
     return {
       isdisplay: "none",
-      price1:58,
-      price2:20,
-      price3: 17.9,
       isnum: 1,
       num22: 0,
       seen22: true,
@@ -245,7 +242,7 @@ export default {
       isdis: false,
       scrolltop: 0,
       seen: true,
-      back:true,
+      timer:null,
       swiperOptions: {
         pagination: {
           el: ".swiper-pagination",
@@ -259,6 +256,8 @@ export default {
         loop: true,
       },
       list:[],
+      list3:[],
+      list33:[]
     };
   },
   // 计算总价格
@@ -278,13 +277,13 @@ export default {
   
     prices() {
       if (this.seen22 == false && this.seen33 == true) {
-        return parseInt(this.price1) + parseInt(this.price2);
+        return parseInt(this.list33.price1) + parseInt(this.list33.price2);
       } else if (this.seen33 == false && this.seen22 == true) {
-        return this.price1 + this.price3;
+        return parseInt(this.list33.price1) + parseInt(this.list33.price3);
       } else if (this.seen33 == false && this.seen22 == false) {
-        return this.price1 + this.price2 + this.price3;
+        return parseInt(this.list33.price1) + parseInt(this.list33.price2) + parseInt(this.list33.price3);
       } else {
-        return this.price1;
+        return parseInt(this.list33.price1);
       }
     },
   },
@@ -299,7 +298,8 @@ export default {
           if (response.data.code == 200) {
             console.log(response);
             that.list = response.data.list;
-
+            that.list3=response.data.list[3];
+            that.list33=that.list3[0];
             //   console.log(that.list);
           }
         })
@@ -327,21 +327,20 @@ export default {
     },
     clicktwo(n) {
       let that = this;
-      console.log(n + ",222");
-      let timer = setInterval(function () {
-        let x = parseInt(n / 30);
-        if (that.$refs.scrollbox.scrollTop < n) {
-          that.$refs.scrollbox.scrollTop += x;
-          if (that.$refs.scrollbox.scrollTop >= n) {
-            clearInterval(timer);
+        clearInterval(that.timer)
+        that.timer = setInterval(function () {
+          let y=that.$refs.scrollbox.scrollTop;
+          let nn=n-50;
+          let x = Math.abs((y-nn)/10);
+          if(y==nn){
+            clearInterval(that.timer);
           }
-        } else {
-          that.$refs.scrollbox.scrollTop -= x;
-          if (that.$refs.scrollbox.scrollTop <= n) {
-            clearInterval(timer);
-          }
-        }
-      }, 1);
+          if (y < nn) {
+            that.$refs.scrollbox.scrollTop += Math.ceil(x);
+          } else if(y > nn) {
+            that.$refs.scrollbox.scrollTop -=Math.ceil(x);
+          }         
+        }, 1);     
     },
     
     // 追罩层添加购物车
@@ -394,7 +393,6 @@ export default {
       this.scrolltop = event.target.scrollTop;
       let y = this.scrolltop / 400;
       this.$refs.topbox.style = `background:rgba(255, 255, 255,${y})`; //顶部div的背景透明度
-      console.log(this.scrolltop);
       if (this.scrolltop > 200) {
         this.seen = false;
       } else {
@@ -535,8 +533,7 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  width: 88%;
-  padding-left: 5px;
+  padding: 0 10px;
 }
 .kong {
   height: 8px;
@@ -861,7 +858,6 @@ export default {
 }
 /* 追罩层 */
 .popbox {
-  z-index: 10;
   position: fixed;
   top: 40%;
   left: 25%;
@@ -869,7 +865,7 @@ export default {
   width: 50%;
   height: 150px;
   border-radius: 10px;
-  padding:  20px 10px;
+  padding: 20px;
 }
 .popbox1 {
   display: flex;
@@ -877,17 +873,6 @@ export default {
   align-items: center;
   color: #f0f0f0;
   margin-bottom: 15px;
-}
-
-/* 回到顶部 */
-.back-top-wrap {
-  position: fixed;
-  bottom: 70px;
-  right: 20px;
-  width: 10%;
-}
-
-.backTop {
-  width: 100%;
+  z-index: 999;
 }
 </style>

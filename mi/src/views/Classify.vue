@@ -689,7 +689,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      scrollTop: null,
+      scrollTop:0,
       list: [],
     };
   },
@@ -701,7 +701,7 @@ export default {
       .get(url)
       .then(function (response) {
         if (response.data.code == 200) {
-          console.log(response);
+          // console.log(response);
           that.list = response.data.list;
           
         //   console.log(that.list);
@@ -714,16 +714,16 @@ export default {
   methods: {
     divScroll(event) {
       this.scrollTop = event.target.scrollTop;
-      console.log(this.scrollTop)
-      if (this.scrollTop <= this.$refs.a1.offsetTop) {
+      // console.log(this.scrollTop)
+      if (this.scrollTop <= this.$refs.a1.offsetTop-40) {
         this.$refs.xiaomi.classList.add("active");
       } else {
         this.$refs.xiaomi.classList.remove("active");
       }
       // Redmi手机
       if (
-        this.scrollTop >= this.$refs.a2.offsetTop &&
-        this.scrollTop < this.$refs.a3.offsetTop
+        this.scrollTop >= this.$refs.a2.offsetTop-40 &&
+        this.scrollTop < this.$refs.a3.offsetTop-40
       ) {
         this.$refs.hongmi.classList.add("active");
       } else {
@@ -731,8 +731,8 @@ export default {
       }
       //黑鲨手机
       if (
-        this.scrollTop >= this.$refs.a3.offsetTop &&
-        this.scrollTop < this.$refs.a4.offsetTop
+        this.scrollTop >= this.$refs.a3.offsetTop-40 &&
+        this.scrollTop < this.$refs.a4.offsetTop-40
       ) {
         this.$refs.heisha.classList.add("active");
       } else {
@@ -740,8 +740,8 @@ export default {
       }
       // 5G合约
       if (
-        this.scrollTop >= this.$refs.a4.offsetTop &&
-        this.scrollTop < this.$refs.a5.offsetTop
+        this.scrollTop >= this.$refs.a4.offsetTop-40 &&
+        this.scrollTop < this.$refs.a5.offsetTop-40
       ) {
         this.$refs.heyue.classList.add("active");
       } else {
@@ -749,8 +749,8 @@ export default {
       }
       //小米众筹
       if (
-        this.scrollTop >= this.$refs.a5.offsetTop &&
-        this.scrollTop < this.$refs.a6.offsetTop
+        this.scrollTop >= this.$refs.a5.offsetTop-40 &&
+        this.scrollTop < this.$refs.a6.offsetTop-40
       ) {
         this.$refs.zhongchou.classList.add("active");
       } else {
@@ -758,8 +758,8 @@ export default {
       }
       // 电视
       if (
-        this.scrollTop >= this.$refs.a6.offsetTop &&
-        this.scrollTop < this.$refs.a7.offsetTop
+        this.scrollTop >= this.$refs.a6.offsetTop-40 &&
+        this.scrollTop < this.$refs.a7.offsetTop-40
       ) {
         this.$refs.TV.classList.add("active");
       } else {
@@ -767,8 +767,8 @@ export default {
       }
       // 大家电
       if (
-        this.scrollTop >= this.$refs.a7.offsetTop &&
-        this.scrollTop < this.$refs.a8.offsetTop
+        this.scrollTop >= this.$refs.a7.offsetTop-40 &&
+        this.scrollTop < this.$refs.a8.offsetTop-40
       ) {
         this.$refs.jiadian.classList.add("active");
       } else {
@@ -776,8 +776,8 @@ export default {
       }
       // 电脑办公
       if (
-        this.scrollTop >= this.$refs.a8.offsetTop &&
-        this.scrollTop < this.$refs.a9.offsetTop
+        this.scrollTop >= this.$refs.a8.offsetTop-40 &&
+        this.scrollTop < this.$refs.a9.offsetTop-40
       ) {
         this.$refs.computer.classList.add("active");
       } else {
@@ -785,8 +785,8 @@ export default {
       }
       // 小爱智能
       if (
-        this.scrollTop >= this.$refs.a9.offsetTop &&
-        this.scrollTop < this.$refs.a10.offsetTop
+        this.scrollTop >= this.$refs.a9.offsetTop-40 &&
+        this.scrollTop < this.$refs.a10.offsetTop-40
       ) {
         this.$refs.xiaoai.classList.add("active");
       } else {
@@ -794,8 +794,8 @@ export default {
       }
       //路由器
       if (
-        this.scrollTop >= this.$refs.a10.offsetTop &&
-        this.scrollTop < this.$refs.a11.offsetTop
+        this.scrollTop >= this.$refs.a10.offsetTop-40 &&
+        this.scrollTop < this.$refs.a11.offsetTop-40
       ) {
         this.$refs.tplink.classList.add("active");
       } else {
@@ -803,8 +803,8 @@ export default {
       }
       //生活电器
       if (
-        this.scrollTop >= this.$refs.a11.offsetTop &&
-        this.scrollTop < this.$refs.a12.offsetTop
+        this.scrollTop >= this.$refs.a11.offsetTop-40 &&
+        this.scrollTop < this.$refs.a12.offsetTop-40
       ) {
         this.$refs.shenghuo.classList.add("active");
         var PageId11 = document.querySelector("#page1");
@@ -814,8 +814,8 @@ export default {
       }
       //厨房电器
       if (
-        this.scrollTop >= this.$refs.a12.offsetTop &&
-        this.scrollTop < this.$refs.a13.offsetTop
+        this.scrollTop >= this.$refs.a12.offsetTop-40 &&
+        this.scrollTop < this.$refs.a13.offsetTop-40
       ) {
         this.$refs.kitchen.classList.add("active");
         var PageId12 = document.querySelector("#page13");
@@ -825,8 +825,8 @@ export default {
       }
       //智能穿戴
       if (
-        this.scrollTop >= this.$refs.a13.offsetTop &&
-        this.scrollTop < this.$refs.a14.offsetTop
+        this.scrollTop >= this.$refs.a13.offsetTop-40 &&
+        this.scrollTop < this.$refs.a14.offsetTop-40
       ) {
         this.$refs.wear.classList.add("active");
         var PageId13 = document.querySelector("#page14");
@@ -836,8 +836,8 @@ export default {
       }
       //智能家居
       if (
-        this.scrollTop >= this.$refs.a14.offsetTop &&
-        this.scrollTop < this.$refs.a15.offsetTop
+        this.scrollTop >= this.$refs.a14.offsetTop-40 &&
+        this.scrollTop < this.$refs.a15.offsetTop-40
       ) {
         this.$refs.jiaju.classList.add("active");
         var PageId14 = document.querySelector("#page15");
@@ -847,8 +847,8 @@ export default {
       }
       //车载出行
       if (
-        this.scrollTop >= this.$refs.a15.offsetTop &&
-        this.scrollTop < this.$refs.a16.offsetTop
+        this.scrollTop >= this.$refs.a15.offsetTop-40 &&
+        this.scrollTop < this.$refs.a16.offsetTop-40
       ) {
         this.$refs.cart.classList.add("active");
         var PageId15 = document.querySelector("#page16");
@@ -858,8 +858,8 @@ export default {
       }
       //个护健康
       if (
-        this.scrollTop >= this.$refs.a16.offsetTop &&
-        this.scrollTop < this.$refs.a17.offsetTop
+        this.scrollTop >= this.$refs.a16.offsetTop-40 &&
+        this.scrollTop < this.$refs.a17.offsetTop-40
       ) {
         this.$refs.jiankang.classList.add("active");
         var PageId16 = document.querySelector("#page17");
@@ -868,7 +868,7 @@ export default {
         this.$refs.jiankang.classList.remove("active");
       }
       //数码配件
-      if (this.scrollTop > this.$refs.a17.offsetTop) {
+      if (this.scrollTop >= this.$refs.a17.offsetTop-40) {
         this.$refs.shuma.classList.add("active");
       } else {
         this.$refs.shuma.classList.remove("active");
@@ -876,7 +876,7 @@ export default {
     },
     Submit(key) {
       var PageId = document.querySelector("#page" + key);
-      this.$refs.qq.scrollTop = PageId.offsetTop;
+      this.$refs.qq.scrollTop = PageId.offsetTop-40;
     },
 
     // 搜索按钮

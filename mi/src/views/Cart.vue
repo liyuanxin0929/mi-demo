@@ -31,7 +31,7 @@
             </div>
 
              <!-- 购物车添加商品 -->
-            <div class="cart-box" v-if="wrap.length>=0">
+            <div class="cart-box" v-if="wrap.length>0">
                 <div class="cart-item-wrap" v-for="(item,index) in wrap" :key="item.item">
                     
                     <div class="cart-item-left" v-if="item.checked" @click="checkBtn1(index)">
@@ -71,7 +71,7 @@
                         </div>     
                     </div>                    
                 </div>
-                <div class="tips-box">
+                <div class="tips-box" >
                     温馨提示：产品是否购买成功，以最终下单为准，请尽快结算
                 </div>                
             </div>

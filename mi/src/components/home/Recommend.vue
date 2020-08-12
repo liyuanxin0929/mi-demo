@@ -155,8 +155,7 @@
         <div class="recommend-mind-content">
           <p class="recommend-household-title">{{item.title}}</p>
           <p class="recommend-household-des">{{item.des}}</p>
-          <p class="recommend-household-price">
-            ￥{{item.price}}
+          <p class="recommend-household-price">{{item.price}}
             <span class="recommend-household-i">{{item.i}}</span>
           </p>
         </div>
