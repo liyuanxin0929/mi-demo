@@ -138,7 +138,7 @@
           总价：
           <span class="datail-item9-list">￥{{prices}}</span>
         </div>
-        <div class="datail-center-item10">
+        <div class="datail-center-item10" @click="taocan">
           购买此套餐(
           <span>{{isnum}}</span>件商品
           )
@@ -257,7 +257,8 @@ export default {
       },
       list:[],
       list3:[],
-      list33:[]
+      list33:[],
+      list44:[]
     };
   },
   // 计算总价格
@@ -288,7 +289,7 @@ export default {
     },
   },
 // axios请求
-    activated() {
+    created() {
       let url = `http://127.0.0.1:5500/dist/data/DetailsList${this.$route.query.id}.json`;
       let that = this;
       console.log("chengg");
@@ -300,7 +301,8 @@ export default {
             that.list = response.data.list;
             that.list3=response.data.list[3];
             that.list33=that.list3[0];
-            //   console.log(that.list);
+            that.list44=that.list[6]
+              console.log(that.list44);
           }
         })
         .catch(function (error) {
@@ -314,6 +316,17 @@ export default {
       this.$router.push({
         path: "/evaluate",
       });
+    },
+    //购买此套餐
+    taocan(){
+      for(let i=0;i<this.list44.length;i++){
+        if(this.list44[i].checked==true){
+          this.$store.commit("adddetail",this.list44[i])
+        }
+      }
+      this.$router.push({
+        path:"/cart"
+      })
     },
     // 跳转
     clickone() {
@@ -360,20 +373,24 @@ export default {
       this.num22++;
       if (this.num22 % 2 == 0) {
         this.seen22 = true;
+        this.list44[1].checked=false
         this.isnum--;
       } else {
         this.seen22 = false;
         this.isnum++;
+        this.list44[1].checked=true
       }
     },
     gou2click() {
       this.num33++;
       if (this.num33 % 2 == 0) {
         this.seen33 = true;
+        this.list44[2].checked=false
         this.isnum--;
       } else {
         this.seen33 = false;
         this.isnum++;
+        this.list44[2].checked=true
       }
     },
     // 返回方法

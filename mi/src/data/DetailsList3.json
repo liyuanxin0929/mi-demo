@@ -102,7 +102,26 @@
           "img": "http://localhost:5500/dist/assets/image/详情/7.jpg"
         }
       ],
-      
+      [
+        {
+          "price": "2499",
+          "title": "小米电视",
+          "img": "http://localhost:5500/dist/assets/recommend/16.jpg",
+          "checked":true
+        },
+        {
+          "price": "111",
+          "title": "1号",
+          "img": "http://localhost:5500/dist/assets/recommend/15.jpg",
+          "checked":false
+        },
+        {
+          "price": "222",
+          "title": "2号",
+          "img": "http://localhost:5500/dist/assets/recommend/14.jpg",
+          "checked":false
+        }
+      ],
         {
           "price":"2499",
           "title":"小米电视",
